@@ -1,13 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         
-        {/* Logo / Brand */}
-        <Link href="/" className="text-xl font-bold text-blue-700">
-          Mainstream Industries Ltd
+        {/* Logo + Brand */}
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/mainstream-logo.png"
+            alt="Mainstream Industries Ltd"
+            width={45}
+            height={45}
+            className="object-contain"
+          />
+          <span className="text-lg font-bold text-blue-700">
+            Mainstream Industries Ltd
+          </span>
         </Link>
 
         {/* Navigation */}
