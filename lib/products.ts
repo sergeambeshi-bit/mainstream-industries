@@ -3,7 +3,7 @@ export const products = [
     slug: "550w-solar-panel",
     name: "550W Mono Solar Panel",
     price: "₦180,000",
-    image: "/images/solar.jpg",
+    image: "/images/solar-panel.png",
     category: "solar-panels",
     description:
       "High-efficiency 550W mono solar panel designed for residential and commercial solar systems in Nigeria.",
@@ -24,7 +24,7 @@ export const products = [
     slug: "5kva-hybrid-inverter",
     name: "5kVA Hybrid Inverter",
     price: "₦850,000",
-    image: "/images/solar.jpg",
+    image: "/images/inverter.png",
     category: "inverters",
     description:
       "Advanced hybrid inverter for seamless solar, battery, and grid integration.",
@@ -45,7 +45,7 @@ export const products = [
     slug: "lithium-battery-5kwh",
     name: "5kWh Lithium Battery Storage",
     price: "₦1,200,000",
-    image: "/images/solar.jpg",
+    image: "/images/battery.png",
     category: "batteries",
     description:
       "Reliable lithium battery system for storing solar energy and ensuring uninterrupted power.",
@@ -66,7 +66,7 @@ export const products = [
     slug: "mppt-charge-controller",
     name: "MPPT Charge Controller",
     price: "₦250,000",
-    image: "/images/solar.jpg",
+    image: "/images/controller.png",
     category: "charge-controllers",
     description:
       "Efficient MPPT charge controller for maximizing solar energy harvest.",
