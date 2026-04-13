@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import WhatsAppButton from "../components/WhatsAppButton";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,26 +15,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mainstream Industries Ltd | Power Solutions Nigeria",
+  title: "Mainstream Industries Ltd | Solar Energy Nigeria",
   description:
-    "Generator installation, diesel generator maintenance, and backup power solutions in Nigeria.",
+    "Solar panels, inverters, batteries and energy solutions in Nigeria.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="bg-white text-black">
+        <Navbar />
         {children}
-
-        {/* WhatsApp Floating Button */}
-        <WhatsAppButton />
+        <Footer />
       </body>
     </html>
   );
