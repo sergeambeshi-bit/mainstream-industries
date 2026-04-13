@@ -1,113 +1,78 @@
-"use client";
-
-import { useState } from "react";
-import { products } from "../../lib/products";
+import { products } from "@/lib/products";
 import Link from "next/link";
 
-const categories = [
-  "all",
-  "generators",
-  "inverters",
-  "batteries",
-  "ups",
-];
-
 export default function ShopPage() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const filteredProducts = products.filter((product) => {
-    const matchesCategory =
-      selectedCategory === "all" || product.category === selectedCategory;
-
-    const matchesSearch = product.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
-
-    return matchesCategory && matchesSearch;
-  });
-
   return (
-    <div className="py-16 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-10 text-center">
-          Power Products & Equipment
-        </h1>
+    <div className="bg-gray-100 min-h-screen py-16 px-6">
+      <div className="max-w-7xl mx-auto flex gap-8">
 
-        {/* 🔍 Search Bar */}
-        <div className="mb-6">
-          <input
-            type="text"
-            placeholder="Search products (e.g. generator, inverter...)"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full p-3 border rounded-xl"
-          />
-        </div>
+        {/* Sidebar */}
+        <aside className="w-64 hidden md:block">
+          <div className="bg-white p-6 rounded-2xl shadow-sm">
+            <h2 className="font-semibold mb-4">Categories</h2>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl ${
-                selectedCategory === cat
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200"
-              }`}
-            >
-              {cat.toUpperCase()}
-            </button>
-          ))}
-        </div>
+            <ul className="space-y-3 text-gray-600">
+              <li className="font-medium text-blue-600">All</li>
+              <li>Solar Panels</li>
+              <li>Inverters</li>
+              <li>Batteries</li>
+              <li>Charge Controllers</li>
+            </ul>
+          </div>
+        </aside>
 
-        {/* Products Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {filteredProducts.map((product, i) => (
-            <div
-              key={i}
-              className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition duration-300"
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-48 object-cover"
-              />
+        {/* Main */}
+        <div className="flex-1">
 
-              <div className="p-6">
-                <h2 className="font-semibold text-lg mb-2">
-                  {product.name}
-                </h2>
+          <h1 className="text-4xl font-bold mb-10">
+            Solar Products
+          </h1>
 
-                <p className="text-blue-600 font-bold mb-4">
-                  {product.price}
-                </p>
+          {/* Products Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {products.map((product) => (
+              <div
+                key={product.slug}
+                className="group bg-white border rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition duration-300"
+              >
+                {/* Image */}
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-56 object-cover transition duration-300 group-hover:scale-105"
+                />
 
-                <Link
-                  href={`/shop/${product.slug}`}
-                  className="block text-center bg-blue-600 text-white py-2 rounded-xl mb-2"
-                >
-                  View Details
-                </Link>
+                {/* Content */}
+                <div className="p-6">
+                  <h2 className="font-semibold text-lg mb-2">
+                    {product.name}
+                  </h2>
 
-                <a
-                  href={`https://wa.me/234XXXXXXXXXX?text=Hello, I'm interested in ${product.name}`}
-                  className="block text-center bg-green-500 text-white py-2 rounded-xl"
-                >
-                  Order via WhatsApp
-                </a>
+                  <p className="text-blue-600 font-bold mb-4">
+                    {product.price}
+                  </p>
+
+                  {/* View Details */}
+                  <Link
+                    href={`/shop/${product.slug}`}
+                    className="block text-center bg-blue-600 text-white py-2 rounded-xl mb-3 hover:bg-blue-700 transition"
+                  >
+                    View Details
+                  </Link>
+
+                  {/* WhatsApp */}
+                  <a
+                    href={`https://wa.me/234XXXXXXXXXX?text=Hello, I'm interested in ${product.name}`}
+                    className="block text-center bg-green-500 text-white py-2 rounded-xl hover:bg-green-600 transition"
+                  >
+                    Order via WhatsApp
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* No Results */}
-        {filteredProducts.length === 0 && (
-          <p className="text-center mt-10 text-gray-500">
-            No products found.
-          </p>
-        )}
+        </div>
       </div>
     </div>
   );
