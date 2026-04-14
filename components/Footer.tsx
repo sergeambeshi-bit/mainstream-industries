@@ -37,48 +37,36 @@ export default function Footer() {
           </h3>
 
           <ul className="space-y-2 text-blue-200 text-sm">
-            <li>
-              <Link href="/" className="hover:text-white transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/shop" className="hover:text-white transition">
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-white transition">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-white transition">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-white transition">
-                Contact
-              </Link>
-            </li>
+            <li><Link href="/" className="hover:text-white transition">Home</Link></li>
+            <li><Link href="/shop" className="hover:text-white transition">Shop</Link></li>
+            <li><Link href="/services" className="hover:text-white transition">Services</Link></li>
+            <li><Link href="/about" className="hover:text-white transition">About</Link></li>
+            <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* 🔥 UPDATED CONTACT */}
         <div>
           <h3 className="font-semibold mb-4 text-white">
             Contact
           </h3>
 
+          {/* Location */}
           <p className="text-blue-200 text-sm mb-2">
-            Nigeria
+            Lagos, Nigeria
           </p>
 
+          {/* Phone */}
+          <p className="text-blue-200 text-sm">
+            Phone: +234 XXX XXX XXXX
+          </p>
+
+          {/* Email */}
           <p className="text-blue-200 text-sm mb-6">
             Email: info@mainstreamindustries.com
           </p>
 
+          {/* WhatsApp */}
           <a
             href="https://wa.me/234XXXXXXXXXX"
             className="inline-block bg-green-500 hover:bg-green-600 px-5 py-3 rounded-xl text-black font-semibold transition shadow-md"

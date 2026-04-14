@@ -28,9 +28,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3">
 
-        {/* 🔥 LOGO */}
-        <Link href="/" className="flex items-center">
-          <div className="relative w-12 h-12 md:w-14 md:h-14">
+        {/* 🔥 UPDATED LOGO WITH COMPANY NAME */}
+        <Link href="/" className="flex items-center gap-2">
+
+          {/* Logo */}
+          <div className="relative w-10 h-10 md:w-12 md:h-12">
             <Image
               src="/logo-icon.png"
               alt="Mainstream Industries Logo"
@@ -39,6 +41,17 @@ export default function Navbar() {
               priority
             />
           </div>
+
+          {/* Company Name */}
+          <div className="leading-tight hidden sm:block">
+            <p className="font-bold text-blue-700 text-sm md:text-base tracking-wide">
+              MAINSTREAM
+            </p>
+            <p className="text-[10px] md:text-xs text-gray-500 tracking-widest">
+              INDUSTRIES
+            </p>
+          </div>
+
         </Link>
 
         {/* Desktop Menu */}

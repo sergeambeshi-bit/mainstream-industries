@@ -24,52 +24,82 @@ Message: ${form.message}`;
 
   return (
     <div className="bg-gray-100 py-20 px-4 sm:px-6">
-      <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-sm">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
 
-        <h1 className="text-3xl font-bold mb-6 text-center">
-          Contact Us
-        </h1>
+        {/* 🔥 CONTACT INFO */}
+        <div className="bg-white p-8 rounded-2xl shadow-sm">
+          <h1 className="text-3xl font-bold mb-6">
+            Contact Us
+          </h1>
 
-        <p className="text-gray-600 text-center mb-8">
-          Fill the form below and we’ll respond quickly via WhatsApp.
-        </p>
+          <p className="text-gray-600 mb-8">
+            Reach out to us for solar installations, inverter systems, street lighting and energy solutions.
+          </p>
 
-        {/* FORM */}
-        <div className="space-y-5">
+          <div className="space-y-4 text-gray-700 text-sm">
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={form.name}
-            onChange={handleChange}
-            className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+            <div>
+              <p className="font-semibold">Location</p>
+              <p>Lagos, Nigeria</p>
+            </div>
 
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone Number"
-            value={form.phone}
-            onChange={handleChange}
-            className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+            <div>
+              <p className="font-semibold">Phone</p>
+              <p>+234 XXX XXX XXXX</p>
+            </div>
 
-          <textarea
-            name="message"
-            placeholder="What do you need? (e.g. solar installation, inverter, street lighting)"
-            value={form.message}
-            onChange={handleChange}
-            rows={4}
-            className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+            <div>
+              <p className="font-semibold">Email</p>
+              <p>info@mainstreamindustries.com</p>
+            </div>
 
-          <button
-            onClick={handleWhatsApp}
-            className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-semibold transition"
-          >
-            Send via WhatsApp
-          </button>
+          </div>
+        </div>
+
+        {/* 🧾 FORM */}
+        <div className="bg-white p-8 rounded-2xl shadow-sm">
+
+          <h2 className="text-2xl font-semibold mb-6">
+            Send a Message
+          </h2>
+
+          <div className="space-y-5">
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={form.name}
+              onChange={handleChange}
+              className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone Number"
+              value={form.phone}
+              onChange={handleChange}
+              className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+
+            <textarea
+              name="message"
+              placeholder="What do you need? (e.g. solar installation, inverter, street lighting)"
+              value={form.message}
+              onChange={handleChange}
+              rows={4}
+              className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+
+            <button
+              onClick={handleWhatsApp}
+              className="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-semibold transition"
+            >
+              Send via WhatsApp
+            </button>
+
+          </div>
 
         </div>
 
