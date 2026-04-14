@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import PageTransition from "@/components/PageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} section-light text-black`}
       >
         <Navbar />
-        {children}
+        <PageTransition>
+         {children}
+        </PageTransition>
         <Footer />
         <MobileCTA />
         <WhatsAppFloat />

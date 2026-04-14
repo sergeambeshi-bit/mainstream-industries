@@ -2,29 +2,35 @@
 
 /* 🔥 DESIGN SYSTEM COLORS */
 :root {
-  --primary: #2563eb;      /* blue-600 */
-  --primary-dark: #1d4ed8; /* blue-700 */
-  --dark: #0f172a;         /* slate-900 */
-  --light: #f9fafb;        /* gray-50 */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --dark: #0f172a;
+  --light: #f9fafb;
   --card: #ffffff;
   --border: #f1f5f9;
 
-  /* Base colors */
   --background: #f9fafb;
   --foreground: #111827;
 }
 
-/* Remove conflicting dark mode override (keep things consistent) */
-/* You can reintroduce later properly if needed */
-
 /* 🔥 BASE STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-gray-50 text-gray-900 font-sans;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent content hiding under mobile CTA */
+body {
+  padding-bottom: 80px;
 }
 
 /* 🔥 LAYOUT SYSTEM */
 .section {
-  @apply py-20 px-4 sm:px-6;
+  @apply py-16 sm:py-20 px-4 sm:px-6;
 }
 
 .container {
@@ -46,29 +52,29 @@ body {
 
 /* 🔥 CARD SYSTEM */
 .card {
-  @apply bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition;
+  @apply bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl transition duration-300;
 }
 
 /* 🔥 BUTTON SYSTEM */
 .button-primary {
-  @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition;
+  @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition duration-200;
 }
 
 .button-secondary {
-  @apply bg-white border border-gray-200 text-gray-900 px-6 py-3 rounded-xl font-semibold transition;
+  @apply bg-white border border-gray-200 text-gray-900 px-6 py-3 rounded-xl font-semibold transition duration-200;
 }
 
 .button-whatsapp {
-  @apply bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold transition;
+  @apply bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold transition duration-200;
 }
 
 /* 🔥 TEXT SYSTEM */
 .text-heading {
-  @apply text-4xl md:text-5xl font-bold;
+  @apply text-3xl sm:text-4xl md:text-5xl font-bold;
 }
 
 .text-subheading {
-  @apply text-3xl font-bold;
+  @apply text-2xl sm:text-3xl font-bold;
 }
 
 .text-body {
@@ -77,4 +83,10 @@ body {
 
 .text-muted {
   @apply text-gray-600;
+}
+
+/* 🔥 SMOOTH PAGE TRANSITIONS */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
 }
