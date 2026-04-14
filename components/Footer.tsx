@@ -53,7 +53,7 @@ export default function Footer() {
 
           {/* Location */}
           <p className="text-blue-200 text-sm mb-2">
-            Lagos, Nigeria
+            Awka, Nigeria
           </p>
 
           {/* Phone Numbers */}
