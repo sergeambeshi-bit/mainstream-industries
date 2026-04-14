@@ -27,7 +27,7 @@ Message: ${form.message}`;
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
 
         {/* 🔥 CONTACT INFO */}
-        <div className="bg-white p-8 rounded-2xl shadow-sm">
+        <div className="section-light p-8 rounded-2xl shadow-sm">
           <h1 className="text-3xl font-bold mb-6">
             Contact Us
           </h1>

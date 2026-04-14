@@ -66,7 +66,7 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="group p-8 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2 border border-gray-100"
+                className="group p-8 section-light rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2 border border-gray-100"
               >
                 {/* Icon */}
                 <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">

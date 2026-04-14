@@ -39,7 +39,7 @@ export default function ProjectsPage() {
         {projects.map((project, i) => (
           <div
             key={i}
-            className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2"
+            className="group section-light rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2"
           >
             <div className="relative h-56 w-full">
               <Image

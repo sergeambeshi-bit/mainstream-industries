@@ -29,7 +29,7 @@ export default function ShopPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2 border border-gray-100"
+              className="group section-light rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2 border border-gray-100"
             >
 
               {/* Image */}
@@ -44,7 +44,7 @@ export default function ShopPage() {
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                   <Link
                     href={`/shop/${product.slug}`}
-                    className="bg-white text-blue-700 px-4 py-2 rounded-lg font-semibold"
+                    className="section-light text-blue-700 px-4 py-2 rounded-lg font-semibold"
                   >
                     View Details
                   </Link>

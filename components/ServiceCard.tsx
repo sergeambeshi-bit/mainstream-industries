@@ -14,7 +14,7 @@ export default function ServiceCard({ title }: Props) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="group relative p-8 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden"
+      className="group relative p-8 section-light rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden"
     >
       {/* 🔥 Glow Effect */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-blue-500/10 to-transparent"></div>

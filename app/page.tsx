@@ -205,7 +205,7 @@ export default function Home() {
 
         <a
           href="https://wa.me/234XXXXXXXXXX"
-          className="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold inline-block hover:bg-gray-100 transition"
+          className="section-light text-blue-700 px-6 py-3 rounded-xl font-semibold inline-block hover:bg-gray-100 transition"
         >
           Chat on WhatsApp
         </a>
