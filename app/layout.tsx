@@ -5,7 +5,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 import PageTransition from "@/components/PageTransition";
 
 const geistSans = Geist({
@@ -40,7 +39,7 @@ export default function RootLayout({
         </PageTransition>
         <Footer />
         <MobileCTA />
-        <WhatsAppFloat />
+    
       </body>
     </html>
   );
