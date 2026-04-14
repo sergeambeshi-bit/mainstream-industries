@@ -1,59 +1,60 @@
 import Image from "next/image";
 
 const projects = [
-  {
-    title: "Residential Solar Installation",
-    image: "/images/projects/project1.jpg",
-  },
-  {
-    title: "Commercial Solar System",
-    image: "/images/projects/project2.jpg",
-  },
-  {
-    title: "Solar Street Lighting",
-    image: "/images/projects/project3.jpg",
-  },
-  {
-    title: "Inverter & Battery Setup",
-    image: "/images/projects/project4.jpg",
-  },
+  { title: "Residential Solar Installation", image: "/projects/project1.png" },
+  { title: "Commercial Solar System", image: "/projects/project2.png" },
+  { title: "Solar Street Lighting", image: "/projects/project3.png" },
+  { title: "Inverter & Battery Setup", image: "/projects/project4.png" },
+  { title: "Hybrid Power System", image: "/projects/project5.png" },
+  { title: "Solar Panel Roof Setup", image: "/projects/project6.png" },
+  { title: "Industrial Solar Project", image: "/projects/project7.png" },
+  { title: "Battery Storage System", image: "/projects/project8.png" },
+  { title: "Off-Grid Installation", image: "/projects/project9.png" },
+  { title: "Large Scale Deployment", image: "/projects/project10.png" },
+  { title: "Commercial Backup System", image: "/projects/project11.png" },
+  { title: "Advanced Solar Installation", image: "/projects/project12.png" },
 ];
 
 export default function ProjectsPage() {
   return (
-    <div className="bg-gray-50 py-20 px-4 sm:px-6">
+    <div className="section-light">
 
       {/* Header */}
-      <div className="max-w-5xl mx-auto text-center mb-16">
-        <h1 className="text-4xl font-bold mb-4">
+      <div className="container text-center mb-16">
+        <h1 className="text-heading mb-4">
           Our Projects
         </h1>
-        <p className="text-gray-600">
-          Explore some of our completed solar installations and energy solutions.
+        <p className="text-muted max-w-2xl mx-auto">
+          Explore real solar installations delivered for homes, businesses and communities across Nigeria.
         </p>
       </div>
 
       {/* Grid */}
-      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
         {projects.map((project, i) => (
           <div
             key={i}
-            className="group section-light rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2"
+            className="group relative overflow-hidden rounded-2xl"
           >
-            <div className="relative h-56 w-full">
+            {/* Image */}
+            <div className="relative h-60 w-full">
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
-                className="object-cover group-hover:scale-105 transition duration-300"
+                className="object-cover group-hover:scale-110 transition duration-500"
               />
             </div>
 
-            <div className="p-5">
-              <h3 className="font-semibold text-lg">
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
+
+            {/* Text */}
+            <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition">
+              <p className="font-semibold text-sm">
                 {project.title}
-              </h3>
+              </p>
             </div>
           </div>
         ))}

@@ -5,15 +5,21 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "Shop", href: "/shop" },
+  { name: "Services", href: "/services" },
+  { name: "Projects", href: "/projects" }, // ✅ added
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -52,13 +58,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-10 text-gray-700 font-medium">
-          {[
-            { name: "Home", href: "/" },
-            { name: "Shop", href: "/shop" },
-            { name: "Services", href: "/services" },
-            { name: "About", href: "/about" },
-            { name: "Contact", href: "/contact" },
-          ].map((link) => (
+          {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
@@ -73,7 +73,7 @@ export default function Navbar() {
         {/* Right Side */}
         <div className="flex items-center gap-3">
 
-          {/* WhatsApp CTA */}
+          {/* WhatsApp CTA (desktop only) */}
           <a
             href="https://wa.me/2347064493699"
             className="hidden md:block bg-green-500 hover:bg-green-600 px-5 py-2 rounded-xl text-white font-semibold transition shadow-sm"
@@ -81,7 +81,7 @@ export default function Navbar() {
             WhatsApp
           </a>
 
-          {/* 🔥 ANIMATED HAMBURGER */}
+          {/* 🔥 Animated Hamburger */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1"
@@ -102,23 +102,17 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 🔥 ANIMATED MOBILE MENU */}
+      {/* 🔥 Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
             className="md:hidden bg-white border-t px-4 py-6 space-y-5 shadow-lg"
           >
-            {[
-              { name: "Home", href: "/" },
-              { name: "Shop", href: "/shop" },
-              { name: "Services", href: "/services" },
-              { name: "About", href: "/about" },
-              { name: "Contact", href: "/contact" },
-            ].map((link, i) => (
+            {navLinks.map((link, i) => (
               <motion.div
                 key={link.name}
                 initial={{ opacity: 0, x: -20 }}
@@ -128,18 +122,19 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block text-lg font-medium"
+                  className="block text-lg font-medium text-gray-800"
                 >
                   {link.name}
                 </Link>
               </motion.div>
             ))}
 
+            {/* WhatsApp button */}
             <motion.a
               href="https://wa.me/2347064493699"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.2 }}
               className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold"
             >
               WhatsApp
