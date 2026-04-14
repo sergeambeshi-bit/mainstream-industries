@@ -8,38 +8,50 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/mainstream-logo.png"
-            alt="Mainstream Industries Ltd"
-            width={40}
-            height={40}
-          />
-          <span className="font-bold text-blue-700 text-sm md:text-lg">
-            Mainstream Industries
-          </span>
+        {/* 🔥 ICON-ONLY LOGO */}
+        <Link href="/" className="flex items-center">
+          <div className="relative w-12 h-12 md:w-14 md:h-14">
+            <Image
+              src="/logo-icon.png"
+              alt="Mainstream Industries Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-8 text-gray-700">
-          <Link href="/">Home</Link>
-          <Link href="/shop">Shop</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+        <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+          <Link href="/" className="hover:text-blue-600 transition">Home</Link>
+          <Link href="/shop" className="hover:text-blue-600 transition">Shop</Link>
+          <Link href="/services" className="hover:text-blue-600 transition">Services</Link>
+          <Link href="/about" className="hover:text-blue-600 transition">About</Link>
+          <Link href="/contact" className="hover:text-blue-600 transition">Contact</Link>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl"
-        >
-          ☰
-        </button>
+        {/* Right Side */}
+        <div className="flex items-center gap-3">
+
+          {/* WhatsApp (desktop only) */}
+          <a
+            href="https://wa.me/234XXXXXXXXXX"
+            className="hidden md:block bg-green-500 hover:bg-green-600 px-4 py-2 rounded-xl text-white font-semibold transition"
+          >
+            WhatsApp
+          </a>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-2xl"
+          >
+            ☰
+          </button>
+        </div>
       </div>
 
       {/* Mobile Dropdown */}
