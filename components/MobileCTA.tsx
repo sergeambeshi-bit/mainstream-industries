@@ -12,7 +12,7 @@ export default function MobileCTA() {
       </a>
 
       <a
-        href="https://wa.me/234XXXXXXXXXX"
+        href="https://wa.me/2347064493699"
         className="flex-1 bg-green-500 text-white text-center py-3 rounded-xl font-semibold"
       >
         WhatsApp

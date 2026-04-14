@@ -74,7 +74,7 @@ export default function StreetLightingPage() {
         </p>
 
         <a
-          href="https://wa.me/234XXXXXXXXXX"
+          href="https://wa.me/2347064493699"
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl inline-block transition"
         >
           Get a Quote

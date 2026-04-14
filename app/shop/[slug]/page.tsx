@@ -38,7 +38,7 @@ export default function ProductPage({ params }: Props) {
             <p className="mb-6 text-lg">{product.description}</p>
 
             <a
-              href={`https://wa.me/234XXXXXXXXXX?text=Hello, I'm interested in ${product.name}`}
+              href={`https://wa.me/2347064493699?text=Hello, I'm interested in ${product.name}`}
               className="block text-center bg-green-500 text-white py-3 rounded-xl mb-4"
             >
               Order via WhatsApp

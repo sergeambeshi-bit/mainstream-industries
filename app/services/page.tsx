@@ -109,7 +109,7 @@ export default function ServicesPage() {
           </p>
 
           <a
-            href="https://wa.me/234XXXXXXXXXX"
+            href="https://wa.me/2347064493699"
             className="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold inline-block hover:bg-gray-100 transition"
           >
             Chat on WhatsApp

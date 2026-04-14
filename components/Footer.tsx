@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-blue-950 text-white mt-24">
 
       {/* Main */}
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {/* Company */}
         <div>
@@ -45,7 +45,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* 🔥 UPDATED CONTACT */}
+        {/* Contact */}
         <div>
           <h3 className="font-semibold mb-4 text-white">
             Contact
@@ -56,9 +56,19 @@ export default function Footer() {
             Lagos, Nigeria
           </p>
 
-          {/* Phone */}
-          <p className="text-blue-200 text-sm">
-            Phone: +234 XXX XXX XXXX
+          {/* Phone Numbers */}
+          <p className="text-blue-200 text-sm mb-2">
+            Phone:{" "}
+            <a href="tel:+2347064493699" className="hover:text-white transition">
+              +234 706 449 3699
+            </a>
+          </p>
+
+          <p className="text-blue-200 text-sm mb-4">
+            Phone:{" "}
+            <a href="tel:+2348037243157" className="hover:text-white transition">
+              +234 803 724 3157
+            </a>
           </p>
 
           {/* Email */}
@@ -68,7 +78,7 @@ export default function Footer() {
 
           {/* WhatsApp */}
           <a
-            href="https://wa.me/234XXXXXXXXXX"
+            href="https://wa.me/2347064493699"
             className="inline-block bg-green-500 hover:bg-green-600 px-5 py-3 rounded-xl text-black font-semibold transition shadow-md"
           >
             Chat on WhatsApp

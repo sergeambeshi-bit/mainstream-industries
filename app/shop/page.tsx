@@ -72,7 +72,7 @@ export default function ShopPage() {
                   </Link>
 
                   <a
-                    href={`https://wa.me/234XXXXXXXXXX?text=Hello, I'm interested in ${product.name}`}
+                    href={`https://wa.me/2347064493699?text=Hello, I'm interested in ${product.name}`}
                     className="flex-1 text-center bg-green-500 hover:bg-green-600 text-white py-2 rounded-xl text-sm transition"
                   >
                     Order

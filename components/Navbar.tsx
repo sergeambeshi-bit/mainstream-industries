@@ -83,7 +83,7 @@ export default function Navbar() {
 
           {/* WhatsApp CTA */}
           <a
-            href="https://wa.me/234XXXXXXXXXX"
+            href="https://wa.me/2347064493699"
             className="hidden md:block bg-green-500 hover:bg-green-600 px-5 py-2 rounded-xl text-white font-semibold transition shadow-sm"
           >
             WhatsApp

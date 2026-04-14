@@ -12,36 +12,44 @@ export default function Hero() {
         backgroundPosition: "center",
       }}
     >
-      {/* 🔥 FIXED OVERLAY (LESS DARK, MORE PREMIUM) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-black/60"></div>
+      {/* 🔥 SOFT LUXURY OVERLAY */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-blue-800/40 to-black/50"></div>
 
-      {/* ✨ PREMIUM LIGHT GLOW */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.35),transparent_60%)]"></div>
+      {/* ✨ TOP LIGHT GLOW */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.25),transparent_60%)]"></div>
 
-      {/* Content */}
+      {/* ✨ SUBTLE ANIMATED LIGHT */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.6 }}
+        transition={{ duration: 2 }}
+        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.08),transparent_70%)]"
+      />
+
+      {/* CONTENT */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="relative z-10 max-w-4xl px-4 sm:px-6"
       >
 
-        {/* Tag */}
+        {/* TAG */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-4 text-sm uppercase tracking-widest text-blue-200"
+          className="mb-3 text-xs sm:text-sm uppercase tracking-[0.25em] text-blue-200"
         >
           Solar Energy Experts
         </motion.p>
 
-        {/* Headline */}
+        {/* HEADLINE */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6"
+          className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight mb-4 sm:mb-6"
         >
           Reliable Solar Power for
           <span className="block text-blue-300">
@@ -49,33 +57,33 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subtext */}
+        {/* SUBTEXT */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-lg md:text-xl mb-10 text-gray-200 max-w-2xl mx-auto"
+          className="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
         >
           Solar panels, inverters, batteries and complete energy systems across Nigeria.
         </motion.p>
 
-        {/* Buttons */}
+        {/* DESKTOP CTA ONLY */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="flex flex-col sm:flex-row justify-center gap-4"
+          className="hidden sm:flex justify-center gap-4 mt-8"
         >
           <a
             href="/shop"
-            className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-xl font-semibold transition shadow-lg hover:scale-105"
+            className="button-primary shadow-xl hover:scale-105"
           >
             Shop Solar Products
           </a>
 
           <a
-            href="https://wa.me/234XXXXXXXXXX"
-            className="bg-white/15 backdrop-blur-md border border-white/30 px-8 py-3 rounded-xl font-semibold hover:bg-white/25 transition hover:scale-105"
+            href="https://wa.me/2347064493699"
+            className="button-whatsapp hover:scale-105"
           >
             WhatsApp Us
           </a>
