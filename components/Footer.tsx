@@ -1,50 +1,102 @@
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
-        
+    <footer className="bg-blue-950 text-white mt-24">
+
+      {/* Main */}
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+
         {/* Company */}
         <div>
-          <h2 className="text-xl font-bold mb-4">
-            Mainstream Industries Ltd
-          </h2>
-          <p className="text-gray-400">
-            Providing reliable solar energy solutions, inverters, and backup power systems across Nigeria.
+          <div className="flex items-center gap-3 mb-4">
+            <div className="relative w-10 h-10">
+              <Image
+                src="/logo-icon.png"
+                alt="Mainstream Industries"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <h2 className="text-lg font-bold">
+              Mainstream Industries Ltd
+            </h2>
+          </div>
+
+          <p className="text-blue-200 text-sm leading-relaxed">
+            Providing reliable solar energy solutions, inverter systems and backup
+            power solutions across Nigeria for homes, businesses and industries.
           </p>
         </div>
 
         {/* Links */}
         <div>
-          <h3 className="font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-gray-400">
-            <li><a href="/" className="hover:text-white">Home</a></li>
-            <li><a href="/shop" className="hover:text-white">Shop</a></li>
-            <li><a href="/services" className="hover:text-white">Services</a></li>
-            <li><a href="/contact" className="hover:text-white">Contact</a></li>
+          <h3 className="font-semibold mb-4 text-white">
+            Quick Links
+          </h3>
+
+          <ul className="space-y-2 text-blue-200 text-sm">
+            <li>
+              <Link href="/" className="hover:text-white transition">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/shop" className="hover:text-white transition">
+                Shop
+              </Link>
+            </li>
+            <li>
+              <Link href="/services" className="hover:text-white transition">
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:text-white transition">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-white transition">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
 
         {/* Contact */}
         <div>
-          <h3 className="font-semibold mb-4">Contact</h3>
-          <p className="text-gray-400 mb-2">Nigeria</p>
-          <p className="text-gray-400 mb-4">
+          <h3 className="font-semibold mb-4 text-white">
+            Contact
+          </h3>
+
+          <p className="text-blue-200 text-sm mb-2">
+            Nigeria
+          </p>
+
+          <p className="text-blue-200 text-sm mb-6">
             Email: info@mainstreamindustries.com
           </p>
 
           <a
             href="https://wa.me/234XXXXXXXXXX"
-            className="inline-block bg-green-500 px-4 py-2 rounded-lg text-black font-semibold"
+            className="inline-block bg-green-500 hover:bg-green-600 px-5 py-3 rounded-xl text-black font-semibold transition shadow-md"
           >
             Chat on WhatsApp
           </a>
         </div>
+
       </div>
 
+      {/* Divider */}
+      <div className="border-t border-blue-900"></div>
+
       {/* Bottom */}
-      <div className="text-center text-gray-500 text-sm pb-6">
+      <div className="text-center text-blue-300 text-sm py-6">
         © {new Date().getFullYear()} Mainstream Industries Ltd. All rights reserved.
       </div>
+
     </footer>
   );
 }
