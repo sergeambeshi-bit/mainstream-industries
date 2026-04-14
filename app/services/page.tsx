@@ -1,87 +1,122 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { Zap, Sun, Battery, Settings, Lightbulb } from "lucide-react";
+
+const services = [
+  {
+    title: "Solar Panel Installation",
+    desc: "Professional solar system design and installation for homes, offices and industrial use.",
+    icon: Sun,
+  },
+  {
+    title: "Inverter & Battery Systems",
+    desc: "Reliable backup power systems with automatic switching and uninterrupted electricity.",
+    icon: Battery,
+  },
+  {
+    title: "Solar Street Lighting",
+    desc: "Cost-effective solar lighting solutions for estates, roads and commercial environments.",
+    icon: Lightbulb,
+    link: "/services/solar-street-lighting",
+  },
+  {
+    title: "Backup Power Integration",
+    desc: "Seamless integration of solar, battery and grid systems for reliability.",
+    icon: Zap,
+  },
+  {
+    title: "Energy Consulting",
+    desc: "Expert advice on energy management, system sizing and cost optimization.",
+    icon: Settings,
+  },
+  {
+    title: "System Maintenance",
+    desc: "Ongoing maintenance and support to ensure optimal performance.",
+    icon: Settings,
+  },
+];
 
 export default function ServicesPage() {
   return (
-    <div className="py-20 px-4 sm:px-6 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-gray-50 text-gray-900">
 
-        {/* Header */}
-        <h1 className="text-4xl font-bold mb-12 text-center">
+      {/* 🔥 HERO SECTION */}
+      <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-20 px-6 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Our Services
         </h1>
+        <p className="text-blue-200 max-w-2xl mx-auto">
+          Professional solar and energy solutions tailored for homes, businesses and industries across Nigeria.
+        </p>
+      </section>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {/* 💼 SERVICES GRID */}
+      <section className="py-20 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
 
-          {/* Solar Installation */}
-          <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition">
-            <h2 className="font-semibold text-lg mb-2">
-              Solar Panel Installation
-            </h2>
-            <p className="text-gray-600 text-sm">
-              Professional solar system design and installation for homes, offices and industrial use.
-            </p>
-          </div>
+          {services.map((service, i) => {
+            const Icon = service.icon;
 
-          {/* Inverter Systems */}
-          <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition">
-            <h2 className="font-semibold text-lg mb-2">
-              Inverter & Battery Systems
-            </h2>
-            <p className="text-gray-600 text-sm">
-              Reliable backup power systems with automatic switching and uninterrupted electricity supply.
-            </p>
-          </div>
+            const Card = (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="group p-8 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-300 hover:-translate-y-2 border border-gray-100"
+              >
+                {/* Icon */}
+                <div className="w-12 h-12 mb-5 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">
+                  <Icon size={22} />
+                </div>
 
-          {/* Consulting */}
-          <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition">
-            <h2 className="font-semibold text-lg mb-2">
-              Energy Consulting
-            </h2>
-            <p className="text-gray-600 text-sm">
-              Expert advice on energy management, system sizing and cost optimization.
-            </p>
-          </div>
+                {/* Title */}
+                <h3 className="font-semibold text-lg mb-2">
+                  {service.title}
+                </h3>
 
-          {/* 🔥 STREET LIGHTING (IMPORTANT) */}
-          <Link href="/services/solar-street-lighting">
-            <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition cursor-pointer border">
-              <h2 className="font-semibold text-lg mb-2">
-                Solar Street Lighting
-              </h2>
-              <p className="text-gray-600 text-sm">
-                Cost-effective solar lighting systems for estates, roads and commercial environments.
-              </p>
-            </div>
-          </Link>
+                {/* Description */}
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {service.desc}
+                </p>
+              </motion.div>
+            );
 
-          {/* Backup Integration */}
-          <Link href="/services/backup-power-integration">
-            <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition cursor-pointer border">
-              <h2 className="font-semibold text-lg mb-2">
-                Backup Power Integration
-              </h2>
-              <p className="text-gray-600 text-sm">
-                Seamless integration of solar, battery and grid systems for reliable power supply.
-              </p>
-            </div>
-          </Link>
-
-          {/* Maintenance */}
-          <Link href="/services/system-maintenance">
-            <div className="p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition cursor-pointer border">
-              <h2 className="font-semibold text-lg mb-2">
-                System Maintenance
-              </h2>
-              <p className="text-gray-600 text-sm">
-                Ongoing maintenance and support to ensure optimal system performance.
-              </p>
-            </div>
-          </Link>
+            return service.link ? (
+              <Link key={i} href={service.link}>
+                {Card}
+              </Link>
+            ) : (
+              Card
+            );
+          })}
 
         </div>
+      </section>
 
-      </div>
+      {/* 🚀 CTA SECTION */}
+      <section className="bg-blue-900 text-white text-center py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">
+            Need a Solar Solution?
+          </h2>
+
+          <p className="text-blue-200 mb-6">
+            Talk to our experts and get a customized solution for your home or business.
+          </p>
+
+          <a
+            href="https://wa.me/234XXXXXXXXXX"
+            className="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold inline-block hover:bg-gray-100 transition"
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
+      </section>
+
     </div>
   );
 }

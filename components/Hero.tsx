@@ -12,11 +12,11 @@ export default function Hero() {
         backgroundPosition: "center",
       }}
     >
-      {/* 🔥 PREMIUM GRADIENT OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-black/80 to-black/90"></div>
+      {/* 🔥 FIXED OVERLAY (LESS DARK, MORE PREMIUM) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-black/60"></div>
 
-      {/* ✨ SUBTLE GLOW EFFECT */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.2),transparent_60%)]"></div>
+      {/* ✨ PREMIUM LIGHT GLOW */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.35),transparent_60%)]"></div>
 
       {/* Content */}
       <motion.div
@@ -31,7 +31,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-4 text-sm uppercase tracking-widest text-blue-300"
+          className="mb-4 text-sm uppercase tracking-widest text-blue-200"
         >
           Solar Energy Experts
         </motion.p>
@@ -44,7 +44,7 @@ export default function Hero() {
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6"
         >
           Reliable Solar Power for
-          <span className="block text-blue-400">
+          <span className="block text-blue-300">
             Homes & Businesses
           </span>
         </motion.h1>
@@ -54,7 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-lg md:text-xl mb-10 text-gray-300 max-w-2xl mx-auto"
+          className="text-lg md:text-xl mb-10 text-gray-200 max-w-2xl mx-auto"
         >
           Solar panels, inverters, batteries and complete energy systems across Nigeria.
         </motion.p>
@@ -75,7 +75,7 @@ export default function Hero() {
 
           <a
             href="https://wa.me/234XXXXXXXXXX"
-            className="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-3 rounded-xl font-semibold hover:bg-white/20 transition hover:scale-105"
+            className="bg-white/15 backdrop-blur-md border border-white/30 px-8 py-3 rounded-xl font-semibold hover:bg-white/25 transition hover:scale-105"
           >
             WhatsApp Us
           </a>
