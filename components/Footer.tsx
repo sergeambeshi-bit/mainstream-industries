@@ -8,7 +8,7 @@ export default function InsightArticle() {
         </h1>
 
         <p className="text-gray-600 mb-8">
-          A solar panel installation is a big investment, and every home is different. That’s why an on-site survey is always essential. :contentReference[oaicite:0]{index=0}
+         A solar panel installation is a big investment, and every home is different. That’s why an on-site survey is always essential.
         </p>
 
         <p className="mb-6 text-gray-700">
