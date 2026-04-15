@@ -52,7 +52,7 @@ export default function Navbar() {
               MAINSTREAM
             </p>
             <p className="text-[8px] sm:text-[10px] md:text-xs text-gray-500 tracking-widest">
-              INDUSTRIES
+              INDUSTRIES LTD
             </p>
           </div>
         </Link>
