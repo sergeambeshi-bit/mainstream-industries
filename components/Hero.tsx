@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-[90vh] flex items-center justify-center text-center text-white overflow-hidden bg-no-repeat bg-contain md:bg-cover bg-center"
+      className="relative min-h-[65vh] flex items-center justify-center text-center text-white overflow-hidden bg-no-repeat bg-contain md:bg-cover bg-center"
       style={{
         backgroundImage: "url('/images/hero-solar.png')",
       }}
