@@ -4,7 +4,22 @@ import Hero from "../components/Hero";
 import ServiceCard from "../components/ServiceCard";
 import { products } from "@/lib/products";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
+
+const projectImages = [
+  "/projects/project1.png",
+  "/projects/project2.png",
+  "/projects/project3.png",
+  "/projects/project4.png",
+  "/projects/project5.png",
+  "/projects/project7.png",
+  "/projects/project8.png",
+  "/projects/project9.png",
+  "/projects/project10.png",
+  "/projects/project11.png",
+  "/projects/project12.png", // keep homepage light (6 only)
+];
 
 export default function Home() {
   return (
@@ -14,24 +29,17 @@ export default function Home() {
       <Hero />
 
       {/* 🏢 ABOUT */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-24 px-4 sm:px-6 bg-white"
-      >
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            About Mainstream Industries
-          </h2>
+  <section className="section-tight bg-white">
+  <div className="container text-center">
+    <h2 className="heading">
+      About Mainstream Industries
+    </h2>
 
-          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-lg">
-            Mainstream Industries Ltd is a leading renewable energy company in Nigeria,
-            founded in 2011 with over 20 years of expertise in solar energy systems.
-          </p>
-        </div>
-      </motion.section>
+    <p className="subtext max-w-3xl mx-auto">
+      Mainstream Industries Ltd is a leading renewable energy company...
+    </p>
+  </div>
+</section>
 
       {/* 🔥 PRODUCTS */}
       <motion.section
@@ -39,12 +47,12 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-24 px-4 sm:px-6 bg-gray-100"
+        className="section-wide bg-gray-100"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="container">
 
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-4xl font-bold">
+            <h2 className="heading">
               Featured Products
             </h2>
 
@@ -104,14 +112,13 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-24 px-4 sm:px-6 bg-white text-center"
+        className="section-tight bg-white text-center"
       >
-        <h2 className="text-4xl font-bold mb-12">
+        <h2 className="heading mb-12">
           Why Choose Us
         </h2>
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
-
+        <div className="container grid md:grid-cols-3 gap-10">
           {[
             "20+ Years Experience",
             "Reliable Power Systems",
@@ -131,12 +138,11 @@ export default function Home() {
               </p>
             </motion.div>
           ))}
-
         </div>
       </motion.section>
 
       {/* ⚡ SERVICES */}
-      <section className="py-24 px-4 sm:px-6 bg-gray-100">
+      <section className="py-16 md:py-20 px-4 sm:px-6 bg-gray-100">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">
             Our Services
@@ -157,58 +163,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ⭐ TESTIMONIALS */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-24 px-6 bg-white text-center"
-      >
-        <h2 className="text-4xl font-bold mb-12">
-          What Our Clients Say
-        </h2>
+      {/* 🔥 PROJECT GALLERY (REPLACES BLUE SECTION) */}
+      <section className="py-20 bg-white overflow-hidden">
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          {[
-            "Mainstream transformed our power system completely.",
-            "Our estate now runs on solar lighting efficiently.",
-            "Highly professional and reliable service.",
-          ].map((text, i) => (
-            <div key={i} className="p-6 bg-gray-50 rounded-2xl shadow-sm">
-              <p className="text-gray-600 mb-4">“{text}”</p>
-              <h4 className="font-semibold">Client</h4>
-            </div>
-          ))}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Our Projects
+          </h2>
+          <p className="text-gray-600 mt-2">
+            Real installations across Nigeria
+          </p>
         </div>
-      </motion.section>
 
-      {/* ⚡ POWER */}
-      <section className="py-24 px-6 bg-blue-900 text-white text-center">
-        <h2 className="text-4xl font-bold mb-4">
-          Powering Nigeria’s Future
-        </h2>
-        <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-          Reliable solar solutions for homes, businesses and industries.
-        </p>
-      </section>
+        <div className="relative w-full overflow-hidden">
+          <div className="flex gap-6 animate-marquee">
 
-      {/* 🚀 CTA */}
-      <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center py-24 px-6">
-        <h2 className="text-4xl font-bold mb-4">
-          Switch to Reliable Solar Power Today
-        </h2>
+            {projectImages.map((src, i) => (
+              <div
+                key={`first-${i}`}
+                className="min-w-[300px] h-[200px] relative rounded-2xl overflow-hidden shadow-md"
+              >
+                <Image
+                  src={src}
+                  alt="Project"
+                  fill
+                  sizes="(max-width: 768px) 80vw, 300px"
+                  quality={60}
+                  className="object-cover"
+                />
+              </div>
+            ))}
 
-        <p className="mb-6 text-lg text-blue-100">
-          Protect your home and business from outages.
-        </p>
+            {projectImages.map((src, i) => (
+              <div
+                key={`second-${i}`}
+                className="min-w-[300px] h-[200px] relative rounded-2xl overflow-hidden shadow-md"
+              >
+                <Image
+                  src={src}
+                  alt="Project"
+                  fill
+                  sizes="(max-width: 768px) 80vw, 300px"
+                  quality={60}
+                  className="object-cover"
+                />
+              </div>
+            ))}
 
-        <a
-          href="https://wa.me/2347064493699"
-          className="section-light text-blue-700 px-6 py-3 rounded-xl font-semibold inline-block hover:bg-gray-100 transition"
-        >
-          Chat on WhatsApp
-        </a>
+          </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <Link href="/projects" className="button-primary">
+            View All Projects
+          </Link>
+        </div>
+
       </section>
 
     </div>
