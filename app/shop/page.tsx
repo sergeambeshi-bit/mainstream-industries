@@ -58,8 +58,8 @@ export default function ShopPage() {
                   {product.name}
                 </h3>
 
-                <p className="text-blue-700 font-bold mb-4">
-                  {product.price}
+                <p className="text-gray-400 text-xs mb-3">
+                  Enquire for details
                 </p>
 
                 <div className="flex gap-2">
