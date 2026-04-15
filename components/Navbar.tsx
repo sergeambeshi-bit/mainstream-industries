@@ -39,7 +39,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <div className="relative w-10 h-10 md:w-12 md:h-12">
             <Image
-              src="/logo-icon.png"
+              src="/logo-v2.png"
               alt="Mainstream Industries Logo"
               fill
               className="object-contain"
