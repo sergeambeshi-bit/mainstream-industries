@@ -40,106 +40,103 @@ export default function Home() {
           </p>
         </div>
       </section>
+{/* 🔥 PRODUCTS (FIXED) */}
+<section className="py-12 md:py-20 px-4 sm:px-6 bg-gray-100">
+  <div className="max-w-7xl mx-auto">
 
-      {/* 🔥 PRODUCTS (SWIPE MOBILE / GRID DESKTOP) */}
-      <section className="py-12 md:py-20 px-4 sm:px-6 bg-gray-100">
-        <div className="max-w-7xl mx-auto">
+    {/* Header */}
+    <div className="flex justify-between items-center mb-6">
+      <h2 className="heading">Featured Products</h2>
 
-          {/* Header */}
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="heading">Featured Products</h2>
+      <Link href="/shop" className="text-blue-700 text-sm md:text-base font-semibold">
+        View All →
+      </Link>
+    </div>
 
-            <Link href="/shop" className="text-blue-700 text-sm md:text-base font-semibold">
-              View All →
+    {/* ✅ MOBILE ONLY (STRICT) */}
+    <div className="block md:hidden w-full overflow-hidden">
+      <div className="horizontal-scroll">
+
+        {products.slice(0, 6).map((product) => (
+          <div
+            key={product.slug}
+            className="scroll-item w-[75%] bg-white rounded-2xl overflow-hidden shadow-sm"
+          >
+            <div className="relative h-40">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            <div className="p-4">
+              <h3 className="text-sm font-semibold mb-2">
+                {product.name}
+              </h3>
+
+              <p className="text-gray-500 text-xs mb-3">
+                Contact us for pricing
+              </p>
+
+              <Link
+                href={`/shop/${product.slug}`}
+                className="block text-center bg-blue-700 text-white py-2 rounded-xl text-xs"
+              >
+                View Details
+              </Link>
+            </div>
+          </div>
+        ))}
+
+      </div>
+    </div>
+
+    {/* ✅ DESKTOP ONLY (STRICT) */}
+    <div className="hidden md:grid grid-cols-4 gap-8 w-full">
+
+      {products.slice(0, 4).map((product, index) => (
+        <motion.div
+          key={product.slug}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.08 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
+        >
+          <div className="relative h-48">
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="p-5">
+            <h3 className="font-semibold mb-2">
+              {product.name}
+            </h3>
+
+            <p className="text-gray-500 text-sm mb-4">
+              Contact us for pricing
+            </p>
+
+            <Link
+              href={`/shop/${product.slug}`}
+              className="block text-center bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-xl text-sm transition"
+            >
+              View Details
             </Link>
           </div>
+        </motion.div>
+      ))}
 
-          {/* 🔥 MOBILE SWIPE */}
-          <div className="horizontal-scroll md:hidden">
+    </div>
 
-            {products.slice(0, 6).map((product, i) => (
-              <div
-                key={product.slug}
-                className="scroll-item w-[75%] bg-white rounded-2xl overflow-hidden shadow-sm"
-              >
-                <div className="relative h-40">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold mb-2">
-                    {product.name}
-                  </h3>
-
-                  <p className="text-gray-500 text-xs mb-3">
-                    Contact us for pricing
-                  </p>
-
-                  <Link
-                    href={`/shop/${product.slug}`}
-                    className="block text-center bg-blue-700 text-white py-2 rounded-xl text-xs"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            ))}
-
-          </div>
-
-          {/* 🔥 DESKTOP GRID */}
-          <div className="hidden md:grid grid-cols-4 gap-8">
-            {products.slice(0, 4).map((product, index) => (
-              <motion.div
-                key={product.slug}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.08 }}
-                viewport={{ once: true }}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
-              >
-                {index === 0 && (
-                  <span className="absolute top-2 left-2 bg-green-500 text-white text-[10px] px-2 py-1 rounded-full z-10">
-                    HOT
-                  </span>
-                )}
-
-                <div className="relative h-48">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition duration-300"
-                  />
-                </div>
-
-                <div className="p-5">
-                  <h3 className="font-semibold mb-2">
-                    {product.name}
-                  </h3>
-
-                  <p className="text-gray-500 text-sm mb-4">
-                    Contact us for pricing
-                  </p>
-
-                  <Link
-                    href={`/shop/${product.slug}`}
-                    className="block text-center bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-xl text-sm transition"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* 💼 WHY US */}
       <motion.section
