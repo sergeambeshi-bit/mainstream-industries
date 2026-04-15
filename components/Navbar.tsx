@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Shop", href: "/shop" },
   { name: "Services", href: "/services" },
-  { name: "Projects", href: "/projects" }, // ✅ added
+  { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "Insights", href: "/insights" },
@@ -29,15 +29,15 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-md border-b border-gray-200"
-          : "bg-white/70 backdrop-blur-md"
+          ? "bg-white/90 backdrop-blur-xl shadow-md border-b border-gray-200"
+          : "bg-white/70 backdrop-blur-xl"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-3">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-2 md:py-3">
 
         {/* 🔥 LOGO + NAME */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="relative w-10 h-10 md:w-12 md:h-12">
+        <Link href="/" className="flex items-center gap-2 active:scale-95 transition">
+          <div className="relative w-9 h-9 md:w-12 md:h-12">
             <Image
               src="/logo-v2.png"
               alt="Mainstream Industries Logo"
@@ -51,7 +51,7 @@ export default function Navbar() {
             <p className="font-bold text-blue-700 text-xs sm:text-sm md:text-base tracking-wide">
               MAINSTREAM
             </p>
-            <p className="text-[9px] sm:text-[10px] md:text-xs text-gray-500 tracking-widest">
+            <p className="text-[8px] sm:text-[10px] md:text-xs text-gray-500 tracking-widest">
               INDUSTRIES
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
         {/* Right Side */}
         <div className="flex items-center gap-3">
 
-          {/* WhatsApp CTA (desktop only) */}
+          {/* WhatsApp CTA (desktop) */}
           <a
             href="https://wa.me/2347064493699"
             className="hidden md:block bg-green-500 hover:bg-green-600 px-5 py-2 rounded-xl text-white font-semibold transition shadow-sm"
@@ -85,7 +85,7 @@ export default function Navbar() {
           {/* 🔥 Animated Hamburger */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1"
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1 active:scale-95 transition"
           >
             <motion.span
               animate={open ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
@@ -103,40 +103,40 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 🔥 Mobile Menu */}
+      {/* 🔥 MOBILE MENU (APP STYLE) */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-white border-t px-4 py-6 space-y-5 shadow-lg"
+            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200 px-5 py-6 space-y-5 shadow-lg"
           >
             {navLinks.map((link, i) => (
               <motion.div
                 key={link.name}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -15 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.05 }}
+                transition={{ delay: i * 0.04 }}
               >
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block text-lg font-medium text-gray-800"
+                  className="block text-lg font-medium text-gray-800 active:scale-95 transition"
                 >
                   {link.name}
                 </Link>
               </motion.div>
             ))}
 
-            {/* WhatsApp button */}
+            {/* WhatsApp CTA */}
             <motion.a
               href="https://wa.me/2347064493699"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold"
+              className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold active:scale-95 transition"
             >
               WhatsApp
             </motion.a>

@@ -31,15 +31,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} section-light text-black`}
+        className={`${geistSans.variable} ${geistMono.variable} section-light text-black pb-20 md:pb-0`}
       >
+        {/* 🔥 NAVBAR */}
         <Navbar />
-        <PageTransition>
-         {children}
-        </PageTransition>
+
+        {/* 🔥 PAGE CONTENT */}
+        <main className="min-h-screen">
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
+
+        {/* 🔥 FOOTER */}
         <Footer />
+
+        {/* 🔥 MOBILE APP BAR */}
         <MobileCTA />
-    
       </body>
     </html>
   );

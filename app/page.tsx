@@ -41,54 +41,88 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🔥 PRODUCTS */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="section-wide bg-gray-100"
-      >
-        <div className="container">
+      {/* 🔥 PRODUCTS (SWIPE MOBILE / GRID DESKTOP) */}
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-gray-100">
+        <div className="max-w-7xl mx-auto">
 
-          <div className="flex justify-between items-center mb-12">
-            <h2 className="heading">
-              Featured Products
-            </h2>
+          {/* Header */}
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="heading">Featured Products</h2>
 
-            <Link href="/shop" className="text-blue-700 font-semibold hover:underline">
+            <Link href="/shop" className="text-blue-700 text-sm md:text-base font-semibold">
               View All →
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {/* 🔥 MOBILE SWIPE */}
+          <div className="horizontal-scroll md:hidden">
+
+            {products.slice(0, 6).map((product, i) => (
+              <div
+                key={product.slug}
+                className="scroll-item w-[75%] bg-white rounded-2xl overflow-hidden shadow-sm"
+              >
+                <div className="relative h-40">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="p-4">
+                  <h3 className="text-sm font-semibold mb-2">
+                    {product.name}
+                  </h3>
+
+                  <p className="text-gray-500 text-xs mb-3">
+                    Contact us for pricing
+                  </p>
+
+                  <Link
+                    href={`/shop/${product.slug}`}
+                    className="block text-center bg-blue-700 text-white py-2 rounded-xl text-xs"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+          {/* 🔥 DESKTOP GRID */}
+          <div className="hidden md:grid grid-cols-4 gap-8">
             {products.slice(0, 4).map((product, index) => (
               <motion.div
                 key={product.slug}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 hover:-translate-y-2"
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
               >
                 {index === 0 && (
-                  <span className="absolute top-3 left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full z-10">
+                  <span className="absolute top-2 left-2 bg-green-500 text-white text-[10px] px-2 py-1 rounded-full z-10">
                     HOT
                   </span>
                 )}
 
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
-                />
+                <div className="relative h-48">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition duration-300"
+                  />
+                </div>
 
                 <div className="p-5">
-                  <h3 className="font-semibold text-base mb-2">
+                  <h3 className="font-semibold mb-2">
                     {product.name}
                   </h3>
 
-                  {/* 🔥 PRICE REMOVED */}
                   <p className="text-gray-500 text-sm mb-4">
                     Contact us for pricing
                   </p>
@@ -105,21 +139,21 @@ export default function Home() {
           </div>
 
         </div>
-      </motion.section>
+      </section>
 
       {/* 💼 WHY US */}
       <motion.section
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="section-tight bg-white text-center"
+        className="py-12 md:py-16 px-4 sm:px-6 bg-white text-center"
       >
-        <h2 className="heading mb-12">
+        <h2 className="heading mb-8">
           Why Choose Us
         </h2>
 
-        <div className="container grid md:grid-cols-3 gap-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-10">
           {[
             "20+ Years Experience",
             "Reliable Power Systems",
@@ -127,14 +161,14 @@ export default function Home() {
           ].map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2 }}
+              transition={{ delay: i * 0.15 }}
               viewport={{ once: true }}
-              className="p-8 bg-gray-50 rounded-2xl shadow-sm hover:shadow-lg transition"
+              className="p-4 md:p-8 bg-gray-50 rounded-2xl shadow-sm"
             >
-              <h3 className="font-bold text-lg mb-3">{item}</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="font-bold text-sm md:text-lg mb-2">{item}</h3>
+              <p className="text-gray-600 text-xs md:text-sm">
                 Delivering reliable and efficient energy solutions across Nigeria.
               </p>
             </motion.div>
@@ -143,13 +177,13 @@ export default function Home() {
       </motion.section>
 
       {/* ⚡ SERVICES */}
-      <section className="py-16 md:py-20 px-4 sm:px-6 bg-gray-100">
+      <section className="py-12 md:py-20 px-4 sm:px-6 bg-gray-100">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
             Our Services
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {[
               "Solar Panel Installation",
               "Hybrid Inverter Systems",
@@ -165,30 +199,30 @@ export default function Home() {
       </section>
 
       {/* 🔥 PROJECT GALLERY */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-12 md:py-20 bg-white overflow-hidden">
 
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold">
+        <div className="text-center mb-6 md:mb-10">
+          <h2 className="text-2xl md:text-4xl font-bold">
             Our Projects
           </h2>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 mt-2 text-sm md:text-base">
             Real installations across Nigeria
           </p>
         </div>
 
         <div className="relative w-full overflow-hidden">
-          <div className="flex gap-6 animate-marquee">
+          <div className="flex gap-4 md:gap-6 animate-marquee">
 
             {projectImages.map((src, i) => (
               <div
                 key={`first-${i}`}
-                className="min-w-[300px] h-[200px] relative rounded-2xl overflow-hidden shadow-md"
+                className="min-w-[220px] md:min-w-[300px] h-[140px] md:h-[200px] relative rounded-2xl overflow-hidden shadow-md"
               >
                 <Image
                   src={src}
                   alt="Project"
                   fill
-                  sizes="(max-width: 768px) 80vw, 300px"
+                  sizes="(max-width: 768px) 70vw, 300px"
                   quality={60}
                   className="object-cover"
                 />
@@ -198,13 +232,13 @@ export default function Home() {
             {projectImages.map((src, i) => (
               <div
                 key={`second-${i}`}
-                className="min-w-[300px] h-[200px] relative rounded-2xl overflow-hidden shadow-md"
+                className="min-w-[220px] md:min-w-[300px] h-[140px] md:h-[200px] relative rounded-2xl overflow-hidden shadow-md"
               >
                 <Image
                   src={src}
                   alt="Project"
                   fill
-                  sizes="(max-width: 768px) 80vw, 300px"
+                  sizes="(max-width: 768px) 70vw, 300px"
                   quality={60}
                   className="object-cover"
                 />
@@ -214,7 +248,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 md:mt-12">
           <Link href="/projects" className="button-primary">
             View All Projects
           </Link>
