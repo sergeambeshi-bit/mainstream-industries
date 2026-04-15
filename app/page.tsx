@@ -18,7 +18,7 @@ const projectImages = [
   "/projects/project9.png",
   "/projects/project10.png",
   "/projects/project11.png",
-  "/projects/project12.png", // keep homepage light (6 only)
+  "/projects/project12.png",
 ];
 
 export default function Home() {
@@ -29,17 +29,17 @@ export default function Home() {
       <Hero />
 
       {/* 🏢 ABOUT */}
-  <section className="section-tight bg-white">
-  <div className="container text-center">
-    <h2 className="heading">
-      About Mainstream Industries
-    </h2>
+      <section className="section-tight bg-white">
+        <div className="container text-center">
+          <h2 className="heading">
+            About Mainstream Industries
+          </h2>
 
-    <p className="subtext max-w-3xl mx-auto">
-      Mainstream Industries Ltd is a leading renewable energy company...
-    </p>
-  </div>
-</section>
+          <p className="subtext max-w-3xl mx-auto">
+            Mainstream Industries Ltd is a leading renewable energy company...
+          </p>
+        </div>
+      </section>
 
       {/* 🔥 PRODUCTS */}
       <motion.section
@@ -88,15 +88,16 @@ export default function Home() {
                     {product.name}
                   </h3>
 
-                  <p className="text-blue-700 font-bold mb-4">
-                    {product.price}
+                  {/* 🔥 PRICE REMOVED */}
+                  <p className="text-gray-500 text-sm mb-4">
+                    Contact us for pricing
                   </p>
 
                   <Link
                     href={`/shop/${product.slug}`}
                     className="block text-center bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-xl text-sm transition"
                   >
-                    View Product
+                    View Details
                   </Link>
                 </div>
               </motion.div>
@@ -163,7 +164,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🔥 PROJECT GALLERY (REPLACES BLUE SECTION) */}
+      {/* 🔥 PROJECT GALLERY */}
       <section className="py-20 bg-white overflow-hidden">
 
         <div className="text-center mb-10">
