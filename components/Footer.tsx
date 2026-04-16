@@ -65,10 +65,10 @@ export default function Footer() {
 
             {/* Email */}
             <a
-              href="mailto:info@mainstreamindustriesltd.com"
+              href="mailto:mainstreamindustriesltd@gmail.com"
               className="block hover:text-white transition"
             >
-              📧 info@mainstreamindustriesltd.com
+              📧 mainstreamindustriesltd@gmail.com
             </a>
 
             {/* WhatsApp */}

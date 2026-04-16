@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mainstream Industries Ltd | Solar Energy Nigeria",
+  title: "Mainstream Industries LTD | Solar Energy Nigeria",
   description:
     "Solar panels, inverters, batteries and energy solutions in Nigeria.",
 };
@@ -38,9 +38,7 @@ export default function RootLayout({
 
         {/* 🔥 PAGE CONTENT */}
         <main className="min-h-screen">
-          <PageTransition>
-            {children}
-          </PageTransition>
+          <PageTransition>{children}</PageTransition>
         </main>
 
         {/* 🔥 FOOTER */}
@@ -48,6 +46,24 @@ export default function RootLayout({
 
         {/* 🔥 MOBILE APP BAR */}
         <MobileCTA />
+
+        {/* 🔥 TAWK LIVE CHAT (CORRECT WAY) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+              var s1=document.createElement("script"),
+              s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/69e0abab59abdf1c35d656bf/1jmapt5nv';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   );

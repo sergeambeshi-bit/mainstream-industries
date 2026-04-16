@@ -32,7 +32,7 @@ export default function Home() {
       <section className="section-tight bg-white">
         <div className="container text-center">
           <h2 className="heading">
-            About Mainstream Industries
+            About Mainstream Industries LTD
           </h2>
 
           <p className="subtext max-w-3xl mx-auto">
