@@ -115,7 +115,7 @@ export default function InsightArticle() {
 
           <a
             href="https://wa.me/2347064493699"
-            className="button-whatsapp"
+            className="button-whatsapp inline-block text-center whitespace-nowrap px-5 py-3 text-xs sm:text-sm md:text-base"
           >
             Contact Mainstream Industries LTD
           </a>
