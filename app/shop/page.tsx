@@ -3,6 +3,7 @@
 import { products } from "@/lib/products";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function ShopPage() {
   return (
@@ -22,7 +23,7 @@ export default function ShopPage() {
       <section className="py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
-          {products.map((product, i) => (
+          {products.map((product) => (
             <motion.div
               key={product.slug}
               initial={{ opacity: 0, y: 40 }}
@@ -34,9 +35,11 @@ export default function ShopPage() {
 
               {/* Image */}
               <div className="relative overflow-hidden">
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
+                  width={640}
+                  height={420}
                   className="w-full h-52 object-cover group-hover:scale-105 transition duration-300"
                 />
 
@@ -72,7 +75,9 @@ export default function ShopPage() {
                   </Link>
 
                   <a
-                    href={`https://wa.me/2347064493699?text=Hello, I'm interested in ${product.name}`}
+                    href={`https://wa.me/2347064493699?text=${encodeURIComponent(
+                      `Hello, I'm interested in ${product.name}`
+                    )}`}
                     className="flex-1 text-center bg-green-500 hover:bg-green-600 text-white py-2 rounded-xl text-sm transition"
                   >
                     Order

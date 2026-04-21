@@ -84,7 +84,11 @@ export default function Navbar() {
 
           {/* 🔥 Animated Hamburger */}
           <button
+            type="button"
             onClick={() => setOpen(!open)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-nav-menu"
             className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1 active:scale-95 transition"
           >
             <motion.span
@@ -107,6 +111,7 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+              id="mobile-nav-menu"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

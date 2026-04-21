@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -67,12 +68,12 @@ export default function Hero() {
           transition={{ delay: 0.5 }}
           className="hidden sm:flex justify-center gap-4 mt-10"
         >
-          <a
+          <Link
             href="/shop"
             className="bg-white text-black px-8 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition"
           >
             Shop Products
-          </a>
+          </Link>
 
           <a
             href="https://wa.me/2347064493699"

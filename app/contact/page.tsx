@@ -1,5 +1,6 @@
 "use client";
 
+import type { ChangeEvent } from "react";
 import { useState } from "react";
 
 export default function ContactPage() {
@@ -9,7 +10,7 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -54,7 +55,7 @@ Message: ${form.message}`;
 
               <div>
                 <p className="font-semibold">Email</p>
-                <p>info@mainstreamindustries.com</p>
+                <p>mainstreamindustriesltd@gmail.com</p>
               </div>
 
             </div>
@@ -127,7 +128,7 @@ Message: ${form.message}`;
 
             <p className="text-gray-600 mb-2">📍 Anambra, Nigeria</p>
             <p className="text-gray-600 mb-2">📞 +234 706 449 3699</p>
-            <p className="text-gray-600">📧 info@mainstreamindustries.com</p>
+            <p className="text-gray-600">📧 mainstreamindustriesltd@gmail.com</p>
           </div>
 
           {/* MAP */}

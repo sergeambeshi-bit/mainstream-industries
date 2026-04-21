@@ -1,6 +1,5 @@
 "use client";
 
-import Hero from "../components/Hero";
 import ServiceCard from "../components/ServiceCard";
 import { products } from "@/lib/products";
 import Link from "next/link";
@@ -24,9 +23,6 @@ const projectImages = [
 export default function Home() {
   return (
     <div className="bg-gray-50 text-gray-900">
-
-      {/* Hero */}
-      <Hero />
 
       {/* 🏢 ABOUT */}
       <section className="section-tight bg-white">
