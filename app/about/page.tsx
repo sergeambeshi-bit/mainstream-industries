@@ -44,7 +44,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
 
           <div className="p-6 bg-gray-50 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
+            <h2 className="text-2xl font-bold mb-4"><span className="subtitle-icon">🌍</span>Our Vision</h2>
             <p className="text-gray-600">
               To be the leading solar company in Nigeria and among the most
               innovative energy solution providers in the world.
@@ -52,7 +52,7 @@ export default function AboutPage() {
           </div>
 
           <div className="p-6 bg-gray-50 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
+            <h2 className="text-2xl font-bold mb-4"><span className="subtitle-icon">🎯</span>Our Mission</h2>
             <p className="text-gray-600">
               To satisfy clients’ energy needs through reliable, cost-effective
               and environmentally friendly solutions that promote sustainable development.
@@ -67,6 +67,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto text-center">
 
           <h2 className="text-3xl font-bold mb-10">
+            <span className="subtitle-icon">💎</span>
             Our Core Values
           </h2>
 
@@ -86,6 +87,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
 
           <h2 className="text-3xl font-bold mb-10 text-center">
+            <span className="subtitle-icon">⚙️</span>
             What We Do
           </h2>
 
@@ -115,6 +117,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto text-center">
 
           <h2 className="text-3xl font-bold mb-6">
+            <span className="subtitle-icon">☀️</span>
             Why Solar Energy Matters
           </h2>
 
@@ -133,6 +136,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
 
           <h2 className="text-3xl font-bold mb-4">
+            <span className="subtitle-icon">🚀</span>
             Ready to Power Your Home or Business?
           </h2>
 

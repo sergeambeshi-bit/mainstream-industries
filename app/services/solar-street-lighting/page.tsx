@@ -32,7 +32,7 @@ export default function StreetLightingPage() {
 
       {/* BENEFITS */}
       <section className="py-20 px-6 bg-white text-center">
-        <h2 className="text-3xl font-bold mb-10">Key Benefits</h2>
+        <h2 className="text-3xl font-bold mb-10"><span className="subtitle-icon">🛠️</span>Key Benefits</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
@@ -66,6 +66,7 @@ export default function StreetLightingPage() {
       {/* CTA */}
       <section className="py-20 px-6 text-center">
         <h2 className="text-3xl font-bold mb-6">
+          <span className="subtitle-icon">🛠️</span>
           Start Your Solar Street Lighting Project
         </h2>
 

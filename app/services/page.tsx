@@ -75,6 +75,7 @@ export default function ServicesPage() {
 
                 {/* Title */}
                 <h3 className="font-semibold text-lg mb-2">
+                  <span className="subtitle-icon">🛠️</span>
                   {service.title}
                 </h3>
 
@@ -101,6 +102,7 @@ export default function ServicesPage() {
       <section className="bg-blue-900 text-white text-center py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">
+            <span className="subtitle-icon">🛠️</span>
             Need a Solar Solution?
           </h2>
 

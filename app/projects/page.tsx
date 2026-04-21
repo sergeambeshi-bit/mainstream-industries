@@ -25,6 +25,7 @@ export default function ProjectsPage() {
           Our Projects
         </h1>
         <p className="text-muted max-w-2xl mx-auto">
+          <span className="subtitle-icon">🏗️</span>
           Explore real solar installations delivered for homes, businesses and communities across Nigeria.
         </p>
       </div>

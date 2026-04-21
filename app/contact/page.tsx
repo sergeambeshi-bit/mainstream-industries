@@ -65,6 +65,7 @@ Message: ${form.message}`;
           <div className="card p-8">
 
             <h2 className="text-2xl font-semibold mb-6">
+              <span className="subtitle-icon">📝</span>
               Send a Message
             </h2>
 
@@ -118,6 +119,7 @@ Message: ${form.message}`;
           {/* TEXT */}
           <div>
             <h2 className="text-3xl font-bold mb-4">
+              <span className="subtitle-icon">📍</span>
               Visit Our Office
             </h2>
 

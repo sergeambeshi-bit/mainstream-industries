@@ -28,6 +28,7 @@ export default function Home() {
       <section className="section-tight bg-white">
         <div className="container text-center">
           <h2 className="heading">
+            <span className="subtitle-icon">🏢</span>
             About Mainstream Industries LTD
           </h2>
 
@@ -42,7 +43,7 @@ export default function Home() {
 
     {/* Header */}
     <div className="flex justify-between items-center mb-6">
-      <h2 className="heading">Featured Products</h2>
+      <h2 className="heading"><span className="subtitle-icon">🔋</span>Featured Products</h2>
 
       <Link href="/shop" className="text-blue-700 text-sm md:text-base font-semibold">
         View All →
@@ -69,6 +70,7 @@ export default function Home() {
 
             <div className="p-4">
               <h3 className="text-sm font-semibold mb-2">
+                <span className="subtitle-icon">🔋</span>
                 {product.name}
               </h3>
 
@@ -112,6 +114,7 @@ export default function Home() {
 
           <div className="p-5">
             <h3 className="font-semibold mb-2">
+              <span className="subtitle-icon">🔋</span>
               {product.name}
             </h3>
 
@@ -143,6 +146,7 @@ export default function Home() {
         className="py-12 md:py-16 px-4 sm:px-6 bg-white text-center"
       >
         <h2 className="heading mb-8">
+          <span className="subtitle-icon">⭐</span>
           Why Choose Us
         </h2>
 
@@ -173,6 +177,7 @@ export default function Home() {
       <section className="py-12 md:py-20 px-4 sm:px-6 bg-gray-100">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
+            <span className="subtitle-icon">🛠️</span>
             Our Services
           </h2>
 
@@ -196,6 +201,7 @@ export default function Home() {
 
         <div className="text-center mb-6 md:mb-10">
           <h2 className="text-2xl md:text-4xl font-bold">
+            <span className="subtitle-icon">🏗️</span>
             Our Projects
           </h2>
           <p className="text-gray-600 mt-2 text-sm md:text-base">

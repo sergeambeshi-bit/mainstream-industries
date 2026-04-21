@@ -58,6 +58,7 @@ export default function ShopPage() {
               <div className="p-5">
 
                 <h3 className="font-semibold text-sm mb-2">
+                  <span className="subtitle-icon">🔋</span>
                   {product.name}
                 </h3>
 

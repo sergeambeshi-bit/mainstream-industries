@@ -13,6 +13,7 @@ export default function InsightsPage() {
 
           <div className="p-6 border rounded-2xl shadow-sm">
             <h2 className="text-xl font-semibold mb-2">
+              <span className="subtitle-icon">🔎</span>
               Why Your Solar Panels Are Not Working Efficiently
             </h2>
 

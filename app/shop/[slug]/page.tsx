@@ -63,6 +63,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="bg-white rounded-2xl p-8 shadow-sm mb-16">
 
           <h2 className="text-2xl font-bold mb-4">
+            <span className="subtitle-icon">📦</span>
             Product Overview
           </h2>
 
@@ -77,21 +78,21 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="grid md:grid-cols-3 gap-6 text-center">
 
           <div className="p-6 bg-gray-50 rounded-2xl">
-            <h3 className="font-semibold mb-2">Reliable Performance</h3>
+            <h3 className="font-semibold mb-2"><span className="subtitle-icon">✅</span>Reliable Performance</h3>
             <p className="text-sm text-gray-600">
               Designed for long-term energy stability.
             </p>
           </div>
 
           <div className="p-6 bg-gray-50 rounded-2xl">
-            <h3 className="font-semibold mb-2">Expert Installation</h3>
+            <h3 className="font-semibold mb-2"><span className="subtitle-icon">🛠️</span>Expert Installation</h3>
             <p className="text-sm text-gray-600">
               Installed by experienced professionals.
             </p>
           </div>
 
           <div className="p-6 bg-gray-50 rounded-2xl">
-            <h3 className="font-semibold mb-2">Nationwide Support</h3>
+            <h3 className="font-semibold mb-2"><span className="subtitle-icon">🇳🇬</span>Nationwide Support</h3>
             <p className="text-sm text-gray-600">
               Available across Nigeria.
             </p>
