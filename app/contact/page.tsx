@@ -49,13 +49,28 @@ Message: ${form.message}`;
 
               <div>
                 <p className="font-semibold">Phone</p>
-                <p>+234 706 449 3699</p>
-                <p>+234 803 724 3157</p>
+                <p>
+                  <a href="tel:+2347064493699" className="hover:text-blue-700 transition">
+                    +234 706 449 3699
+                  </a>
+                </p>
+                <p>
+                  <a href="tel:+2348037243157" className="hover:text-blue-700 transition">
+                    +234 803 724 3157
+                  </a>
+                </p>
               </div>
 
               <div>
                 <p className="font-semibold">Email</p>
-                <p>mainstreamindustriesltd@gmail.com</p>
+                <p>
+                  <a
+                    href="mailto:mainstreamindustriesltd@gmail.com"
+                    className="hover:text-blue-700 transition"
+                  >
+                    mainstreamindustriesltd@gmail.com
+                  </a>
+                </p>
               </div>
 
             </div>
@@ -129,8 +144,21 @@ Message: ${form.message}`;
             </p>
 
             <p className="text-gray-600 mb-2">📍 Anambra, Nigeria</p>
-            <p className="text-gray-600 mb-2">📞 +234 706 449 3699</p>
-            <p className="text-gray-600">📧 mainstreamindustriesltd@gmail.com</p>
+            <p className="text-gray-600 mb-2">
+              📞 {" "}
+              <a href="tel:+2347064493699" className="hover:text-blue-700 transition">
+                +234 706 449 3699
+              </a>
+            </p>
+            <p className="text-gray-600">
+              📧 {" "}
+              <a
+                href="mailto:mainstreamindustriesltd@gmail.com"
+                className="hover:text-blue-700 transition"
+              >
+                mainstreamindustriesltd@gmail.com
+              </a>
+            </p>
           </div>
 
           {/* MAP */}
