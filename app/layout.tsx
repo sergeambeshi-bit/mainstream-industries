@@ -66,7 +66,9 @@ export default function RootLayout({
                 if (window.innerWidth >= 768) return;
                 var iframe = document.querySelector('iframe[title="chat widget"]');
                 if (!iframe) return;
-                iframe.style.bottom = '180px';
+                var mobileCta = document.getElementById('mobile-cta-bar');
+                var ctaHeight = mobileCta ? mobileCta.getBoundingClientRect().height : 96;
+                iframe.style.bottom = (ctaHeight + 24) + 'px';
                 iframe.style.right = '12px';
                 iframe.style.transform = 'scale(0.7)';
                 iframe.style.transformOrigin = 'bottom right';

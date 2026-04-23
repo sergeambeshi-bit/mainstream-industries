@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function MobileCTA() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+    <div id="mobile-cta-bar" className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
 
       {/* 🔥 BACKGROUND BAR */}
       <div className="bg-white/95 backdrop-blur-xl border-t border-gray-200 px-4 pt-3 pb-4 shadow-lg flex gap-3">
