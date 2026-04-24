@@ -1,25 +1,6 @@
 import Image from "next/image";
 
-const projects = [
-  "Residential Solar Installation",
-  "Commercial Solar System",
-  "Solar Street Lighting",
-  "Inverter & Battery Setup",
-  "Hybrid Power System",
-  "Solar Panel Roof Setup",
-  "Industrial Solar Project",
-  "Battery Storage System",
-  "Off-Grid Installation",
-  "Large Scale Deployment",
-  "Commercial Backup System",
-  "Advanced Solar Installation",
-].map((title) => ({
-  title,
-  image: `/projects/${title
-    .toLowerCase()
-    .replace(/ & /g, "-")
-    .replace(/ /g, "-")}.png`,
-}));
+import { projects } from "@/lib/projects";
 
 export default function ProjectsPage() {
   return (

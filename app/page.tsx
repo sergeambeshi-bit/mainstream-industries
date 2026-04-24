@@ -2,31 +2,11 @@
 
 import ServiceCard from "../components/ServiceCard";
 import { products } from "@/lib/products";
+import { projects } from "../lib/projects";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Sun, Battery, Zap, Settings, Camera } from "lucide-react"; // ✅ FIXED IMPORT
-
-/* ✅ FIXED PROJECT IMAGES */
-const projectImages = [
-  "Residential Solar Installation",
-  "Commercial Solar System",
-  "Solar Street Lighting",
-  "Inverter & Battery Setup",
-  "Hybrid Power System",
-  "Solar Panel Roof Setup",
-  "Industrial Solar Project",
-  "Battery Storage System",
-  "Off-Grid Installation",
-  "Large Scale Deployment",
-  "Commercial Backup System",
-  "Advanced Solar Installation",
-].map((title) =>
-  `/projects/${title
-    .toLowerCase()
-    .replace(/ & /g, "-")
-    .replace(/ /g, "-")}.png`
-);
+import { Sun, Battery, Zap, Settings, Camera } from "lucide-react";
 
 export default function Home() {
   return (
@@ -65,9 +45,17 @@ export default function Home() {
           <div className="block md:hidden w-full overflow-hidden">
             <div className="horizontal-scroll">
               {products.slice(0, 6).map((product) => (
-                <div key={product.slug} className="scroll-item w-[75%] bg-white rounded-2xl overflow-hidden shadow-sm">
+                <div
+                  key={product.slug}
+                  className="scroll-item w-[75%] bg-white rounded-2xl overflow-hidden shadow-sm"
+                >
                   <div className="relative h-40">
-                    <Image src={product.image} alt={product.name} fill className="object-cover" />
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
 
                   <div className="p-4">
@@ -80,7 +68,10 @@ export default function Home() {
                       Contact us for pricing
                     </p>
 
-                    <Link href={`/shop/${product.slug}`} className="block text-center bg-blue-700 text-white py-2 rounded-xl text-xs">
+                    <Link
+                      href={`/shop/${product.slug}`}
+                      className="block text-center bg-blue-700 text-white py-2 rounded-xl text-xs"
+                    >
                       View Details
                     </Link>
                   </div>
@@ -101,7 +92,12 @@ export default function Home() {
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
               >
                 <div className="relative h-48">
-                  <Image src={product.image} alt={product.name} fill className="object-cover" />
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
                 <div className="p-5">
@@ -114,7 +110,10 @@ export default function Home() {
                     Contact us for pricing
                   </p>
 
-                  <Link href={`/shop/${product.slug}`} className="block text-center bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-xl text-sm transition">
+                  <Link
+                    href={`/shop/${product.slug}`}
+                    className="block text-center bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-xl text-sm transition"
+                  >
                     View Details
                   </Link>
                 </div>
@@ -144,8 +143,13 @@ export default function Home() {
             "Reliable Power Systems",
             "Clean Energy Solutions",
           ].map((item, i) => (
-            <motion.div key={i} className="p-4 md:p-8 bg-gray-50 rounded-2xl shadow-sm">
-              <h3 className="font-bold text-sm md:text-lg mb-2">{item}</h3>
+            <motion.div
+              key={i}
+              className="p-4 md:p-8 bg-gray-50 rounded-2xl shadow-sm"
+            >
+              <h3 className="font-bold text-sm md:text-lg mb-2">
+                {item}
+              </h3>
               <p className="text-gray-600 text-xs md:text-sm">
                 Delivering reliable and efficient energy solutions across Nigeria.
               </p>
@@ -154,7 +158,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* ⚡ PREMIUM SERVICES */}
+      {/* ⚡ SERVICES */}
       <section className="py-14 md:py-24 px-4 sm:px-6 bg-gray-100">
         <div className="max-w-7xl mx-auto">
 
@@ -164,44 +168,14 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
-
-            <ServiceCard
-              title="Solar Panel Installation"
-              desc="End-to-end solar installation for homes and businesses with maximum efficiency and long-term savings."
-              icon={Sun}
-            />
-
-            <ServiceCard
-              title="Solar CCTV Installation"
-              desc="Solar-powered surveillance systems with 24/7 monitoring, perfect for homes, estates and remote locations."
-              icon={Camera}
-            />
-
-            <ServiceCard
-              title="Hybrid Inverter Systems"
-              desc="Smart hybrid systems that combine solar, battery and grid power for uninterrupted electricity."
-              icon={Zap}
-            />
-
-            <ServiceCard
-              title="Battery Storage Solutions"
-              desc="Reliable energy storage systems designed to keep your power running day and night."
-              icon={Battery}
-            />
-
-            <ServiceCard
-              title="Off-Grid Solar Systems"
-              desc="Complete off-grid solutions for locations without access to public electricity."
-              icon={Sun}
-            />
-
-            <ServiceCard
-              title="Energy Audits & Consulting"
-              desc="Professional energy analysis to optimize your power usage and reduce long-term costs."
-              icon={Settings}
-            />
-
+            <ServiceCard title="Solar Panel Installation" icon={Sun} />
+            <ServiceCard title="Solar CCTV Installation" icon={Camera} />
+            <ServiceCard title="Hybrid Inverter Systems" icon={Zap} />
+            <ServiceCard title="Battery Storage Solutions" icon={Battery} />
+            <ServiceCard title="Off-Grid Solar Systems" icon={Sun} />
+            <ServiceCard title="Energy Audits & Consulting" icon={Settings} />
           </div>
+
         </div>
       </section>
 
@@ -221,21 +195,31 @@ export default function Home() {
         <div className="relative w-full overflow-hidden">
           <div className="flex gap-4 md:gap-6 animate-marquee">
 
-            {projectImages.map((src, i) => (
+            {projects.map((project, i) => (
               <div
                 key={`first-${i}`}
                 className="min-w-[220px] md:min-w-[300px] h-[140px] md:h-[200px] relative rounded-2xl overflow-hidden shadow-md"
               >
-                <Image src={src} alt="Project" fill className="object-cover" />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
             ))}
 
-            {projectImages.map((src, i) => (
+            {projects.map((project, i) => (
               <div
                 key={`second-${i}`}
                 className="min-w-[220px] md:min-w-[300px] h-[140px] md:h-[200px] relative rounded-2xl overflow-hidden shadow-md"
               >
-                <Image src={src} alt="Project" fill className="object-cover" />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
             ))}
 
