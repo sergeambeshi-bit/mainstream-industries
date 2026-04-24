@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 import PageTransition from "@/components/PageTransition";
+import Hero from "@/components/Hero";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
 
         {/* 🔥 PAGE CONTENT */}
         <main className="min-h-screen">
+          <Hero />
           <PageTransition>{children}</PageTransition>
         </main>
 
