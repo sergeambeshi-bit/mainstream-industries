@@ -2,13 +2,18 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Zap, Sun, Battery, Settings, Lightbulb } from "lucide-react";
+import { Zap, Sun, Battery, Settings, Lightbulb, Camera } from "lucide-react";
 
 const services = [
   {
     title: "Solar Panel Installation",
     desc: "Professional solar system design and installation for homes, offices and industrial use.",
     icon: Sun,
+  },
+  {
+    title: "Solar CCTV Installation & Smart Security", // ✅ ADDED
+    desc: "Advanced solar-powered CCTV systems for homes, offices and remote locations with 24/7 surveillance and energy independence.",
+    icon: Camera,
   },
   {
     title: "Inverter & Battery Systems",

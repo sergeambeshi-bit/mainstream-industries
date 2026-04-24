@@ -1,19 +1,25 @@
 import Image from "next/image";
 
 const projects = [
-  { title: "Residential Solar Installation", image: "/projects/project1.png" },
-  { title: "Commercial Solar System", image: "/projects/project2.png" },
-  { title: "Solar Street Lighting", image: "/projects/project3.png" },
-  { title: "Inverter & Battery Setup", image: "/projects/project4.png" },
-  { title: "Hybrid Power System", image: "/projects/project5.png" },
-  { title: "Solar Panel Roof Setup", image: "/projects/project6.png" },
-  { title: "Industrial Solar Project", image: "/projects/project7.png" },
-  { title: "Battery Storage System", image: "/projects/project8.png" },
-  { title: "Off-Grid Installation", image: "/projects/project9.png" },
-  { title: "Large Scale Deployment", image: "/projects/project10.png" },
-  { title: "Commercial Backup System", image: "/projects/project11.png" },
-  { title: "Advanced Solar Installation", image: "/projects/project12.png" },
-];
+  "Residential Solar Installation",
+  "Commercial Solar System",
+  "Solar Street Lighting",
+  "Inverter & Battery Setup",
+  "Hybrid Power System",
+  "Solar Panel Roof Setup",
+  "Industrial Solar Project",
+  "Battery Storage System",
+  "Off-Grid Installation",
+  "Large Scale Deployment",
+  "Commercial Backup System",
+  "Advanced Solar Installation",
+].map((title) => ({
+  title,
+  image: `/projects/${title
+    .toLowerCase()
+    .replace(/ & /g, "-")
+    .replace(/ /g, "-")}.png`,
+}));
 
 export default function ProjectsPage() {
   return (
