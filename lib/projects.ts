@@ -3,6 +3,10 @@ export type Project = {
   image: string;
 };
 
+function getProjectImagePath(title: string) {
+  return `/projects/${encodeURIComponent(`${title.toLowerCase()}.png`)}`;
+}
+
 const projectTitles = [
   "Residential Solar Installation",
   "Commercial Solar System",
@@ -20,8 +24,5 @@ const projectTitles = [
 
 export const projects: Project[] = projectTitles.map((title) => ({
   title,
-  image: `/projects/${title
-    .toLowerCase()
-    .replace(/ & /g, "-")
-    .replace(/ /g, "-")}.png`,
+  image: getProjectImagePath(title),
 }));
