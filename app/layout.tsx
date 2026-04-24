@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 import PageTransition from "@/components/PageTransition";
-import Hero from "@/components/Hero";
+import DynamicHero from "@/components/DynamicHero";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,45 +35,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} section-light text-black pb-20 md:pb-0`}
       >
-        {/* 🔥 NAVBAR */}
         <Navbar />
 
-        {/* 🔥 PAGE CONTENT */}
+        {/* 🔥 DYNAMIC HERO */}
+        <DynamicHero />
+
         <main className="min-h-screen">
-          <Hero />
           <PageTransition>{children}</PageTransition>
         </main>
 
-        {/* 🔥 FOOTER */}
         <Footer />
-
-        {/* 🔥 MOBILE CTA */}
         <MobileCTA />
 
-        {/* 🔥 TAWK CHAT (CORRECT WAY) */}
+        {/* 🔥 TAWK FIX */}
         <Script id="tawk-script" strategy="afterInteractive">
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-
-            Tawk_API.onLoad = function() {
-
-              function moveWidget() {
-                var iframe = document.querySelector('iframe[title="chat widget"]');
-                if (iframe) {
-                  iframe.style.bottom = '180px'; // 🔥 EVEN HIGHER (safe above WhatsApp)
-                  iframe.style.right = '14px';
-                  iframe.style.transform = 'scale(0.82)';
-                  iframe.style.transformOrigin = 'bottom right';
-                  iframe.style.zIndex = '9999';
-                }
-              }
-
-              // run multiple times (Tawk overrides styles)
-              moveWidget();
-              setTimeout(moveWidget, 1000);
-              setTimeout(moveWidget, 3000);
-              setTimeout(moveWidget, 5000);
-            };
 
             (function(){
               var s1=document.createElement("script"),
@@ -84,9 +61,22 @@ export default function RootLayout({
               s1.setAttribute('crossorigin','*');
               s0.parentNode.insertBefore(s1,s0);
             })();
+
+            function forceMoveWidget() {
+              var iframe = document.querySelector('iframe[title="chat widget"]');
+              if (iframe) {
+                iframe.style.position = 'fixed';
+                iframe.style.bottom = '260px';
+                iframe.style.right = '16px';
+                iframe.style.transform = 'scale(0.75)';
+                iframe.style.transformOrigin = 'bottom right';
+                iframe.style.zIndex = '99999';
+              }
+            }
+
+            setInterval(forceMoveWidget, 500);
           `}
         </Script>
-
       </body>
     </html>
   );
