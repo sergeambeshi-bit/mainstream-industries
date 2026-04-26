@@ -65,10 +65,12 @@ export default function RootLayout({
             function forceMoveWidget() {
               var iframe = document.querySelector('iframe[title="chat widget"]');
               if (iframe) {
+                var isMobile = window.innerWidth < 768;
+
                 iframe.style.position = 'fixed';
-                iframe.style.bottom = '240px'; // 🔥 VERY HIGH (clear WhatsApp completely)
-                iframe.style.right = '16px';
-                iframe.style.transform = 'scale(0.78)';
+                iframe.style.bottom = isMobile ? '440px' : '24px';
+                iframe.style.right = isMobile ? '10px' : '16px';
+                iframe.style.transform = isMobile ? 'scale(0.68)' : 'scale(1)';
                 iframe.style.transformOrigin = 'bottom right';
                 iframe.style.zIndex = '99999';
               }
