@@ -48,7 +48,7 @@ export default function ServicesPage() {
     <div className="bg-gradient-to-b from-gray-50 to-blue-50 text-gray-900">
 
       {/* 💼 SERVICES GRID */}
-      <section className="pt-0 pb-20 px-4 sm:px-6">
+      <section className="pt-12 md:pt-16 pb-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
 
           {services.map((service, i) => {
