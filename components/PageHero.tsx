@@ -5,11 +5,22 @@ import { motion } from "framer-motion";
 type Props = {
   title: string;
   subtitle?: string;
+  image?: string;
 };
 
-export default function PageHero({ title, subtitle }: Props) {
+export default function PageHero({ title, subtitle, image }: Props) {
   return (
-    <section className="relative bg-gradient-to-r from-blue-700 to-blue-900 text-white py-16 md:py-24 px-6 text-center overflow-hidden">
+    <section
+      className="relative text-white py-16 md:py-24 px-6 text-center overflow-hidden bg-no-repeat bg-cover bg-center"
+      style={{
+        backgroundImage: image
+          ? `url('${image}')`
+          : "linear-gradient(to right, rgb(29 78 216), rgb(30 58 138))",
+      }}
+    >
+      {/* Base overlay for text legibility over photos */}
+      <div className="absolute inset-0 bg-black/45" />
+
       {/* Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12),transparent_60%)]" />
 

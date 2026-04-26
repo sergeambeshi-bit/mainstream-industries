@@ -16,6 +16,7 @@ export default function DynamicHero() {
       <PageHero
         title="Our Services"
         subtitle="Professional solar and energy solutions tailored for homes, businesses and industries across Nigeria."
+        image="/images/heroes/services-hero.png"
       />
     );
   }
@@ -25,6 +26,7 @@ export default function DynamicHero() {
       <PageHero
         title="Our Projects"
         subtitle="Real solar installations delivered across Nigeria."
+        image="/images/heroes/projects-hero.png"
       />
     );
   }
@@ -34,6 +36,7 @@ export default function DynamicHero() {
       <PageHero
         title="Insights"
         subtitle="Expert advice, guides and updates on solar energy and power solutions."
+        image="/images/heroes/insights-hero.png"
       />
     );
   }
@@ -43,6 +46,7 @@ export default function DynamicHero() {
       <PageHero
         title="Shop"
         subtitle="Browse our range of solar panels, inverters, batteries and accessories."
+        image="/images/heroes/shop-hero.png"
       />
     );
   }
@@ -52,6 +56,7 @@ export default function DynamicHero() {
       <PageHero
         title="About Us"
         subtitle="Learn more about Mainstream Industries LTD and our mission."
+        image="/images/heroes/about-hero.png"
       />
     );
   }
@@ -61,6 +66,7 @@ export default function DynamicHero() {
       <PageHero
         title="Contact Us"
         subtitle="Get in touch with our team for quotes, support and enquiries."
+        image="/images/heroes/contact-hero.png"
       />
     );
   }
