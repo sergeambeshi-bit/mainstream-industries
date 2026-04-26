@@ -47,10 +47,21 @@ export default function RootLayout({
         <Footer />
         <MobileCTA />
 
-        {/* 🔥 TAWK FIX */}
+        {/* 🔥 TAWK: CSS override — targets the bubble container Tawk renders */}
+        <style>{`
+          @media (max-width: 767px) {
+            #tawk-bubble-container { bottom: 90px !important; right: 10px !important; }
+          }
+        `}</style>
+
+        {/* 🔥 TAWK SCRIPT */}
         <Script id="tawk-script" strategy="afterInteractive">
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+
+            Tawk_API.onLoad = function() {
+              applyTawkPosition();
+            };
 
             (function(){
               var s1=document.createElement("script"),
@@ -62,22 +73,32 @@ export default function RootLayout({
               s0.parentNode.insertBefore(s1,s0);
             })();
 
-            function forceMoveWidget() {
-              var iframe = document.querySelector('iframe[title="chat widget"]');
-              if (iframe) {
-                var isMobile = window.innerWidth < 768;
-
-                iframe.style.position = 'fixed';
-                iframe.style.bottom = isMobile ? '440px' : '24px';
-                iframe.style.right = isMobile ? '10px' : '16px';
-                iframe.style.transform = isMobile ? 'scale(0.68)' : 'scale(1)';
-                iframe.style.transformOrigin = 'bottom right';
-                iframe.style.zIndex = '99999';
-              }
+            function applyTawkPosition() {
+              if (window.innerWidth >= 768) return; // desktop: leave Tawk alone
+              var targets = [
+                document.getElementById('tawk-bubble-container'),
+                document.querySelector('[id^="tawk-"]'),
+                document.querySelector('iframe[title="chat widget"]')
+              ];
+              targets.forEach(function(el) {
+                if (!el) return;
+                el.style.setProperty('bottom', '90px', 'important');
+                el.style.setProperty('right',  '10px',  'important');
+              });
             }
 
-            // 🔥 RUN CONTINUOUSLY (this is the key)
-            setInterval(forceMoveWidget, 500);
+            // Fallback: keep applying until the container appears
+            var tawkTimer = setInterval(function() {
+              if (window.innerWidth >= 768) { clearInterval(tawkTimer); return; }
+              var container = document.getElementById('tawk-bubble-container')
+                || document.querySelector('[id^="tawk-"]');
+              if (container) {
+                applyTawkPosition();
+                clearInterval(tawkTimer);
+              }
+            }, 300);
+
+            window.addEventListener('resize', applyTawkPosition);
           `}
         </Script>
       </body>
