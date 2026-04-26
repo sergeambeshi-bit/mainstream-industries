@@ -47,18 +47,8 @@ export default function ServicesPage() {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-blue-50 text-gray-900">
 
-      {/* 🔥 HERO */}
-      <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-20 px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Our Services
-        </h1>
-        <p className="text-blue-200 max-w-2xl mx-auto">
-          Professional solar and energy solutions tailored for homes, businesses and industries across Nigeria.
-        </p>
-      </section>
-
       {/* 💼 SERVICES GRID */}
-      <section className="py-20 px-4 sm:px-6">
+      <section className="pt-0 pb-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
 
           {services.map((service, i) => {
