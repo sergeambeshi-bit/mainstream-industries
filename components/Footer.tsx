@@ -49,10 +49,10 @@ export default function Footer() {
 
             {/* Phone 1 */}
             <a
-              href="tel:+2347064493699"
+              href="tel:+2348068387145"
               className="block hover:text-white transition"
             >
-              📞 +234 706 449 3699
+              📞 +234 806 838 7145
             </a>
 
             {/* Phone 2 */}
@@ -73,7 +73,7 @@ export default function Footer() {
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/2347064493699"
+              href="https://wa.me/2348068387145"
               className="block text-green-300 hover:text-green-400 font-medium"
             >
               💬 Chat on WhatsApp

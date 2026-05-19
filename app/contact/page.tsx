@@ -19,7 +19,7 @@ export default function ContactPage() {
 Phone: ${form.phone}
 Message: ${form.message}`;
 
-    const url = `https://wa.me/2347064493699?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/2348068387145?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
   };
 
@@ -50,8 +50,8 @@ Message: ${form.message}`;
               <div>
                 <p className="font-semibold">Phone</p>
                 <p>
-                  <a href="tel:+2347064493699" className="hover:text-blue-700 transition">
-                    +234 706 449 3699
+                  <a href="tel:+2348068387145" className="hover:text-blue-700 transition">
+                    +234 806 838 7145
                   </a>
                 </p>
                 <p>
@@ -146,8 +146,8 @@ Message: ${form.message}`;
             <p className="text-gray-600 mb-2">📍 Anambra, Nigeria</p>
             <p className="text-gray-600 mb-2">
               📞 {" "}
-              <a href="tel:+2347064493699" className="hover:text-blue-700 transition">
-                +234 706 449 3699
+              <a href="tel:+2348068387145" className="hover:text-blue-700 transition">
+                +234 806 838 7145
               </a>
             </p>
             <p className="text-gray-600">
