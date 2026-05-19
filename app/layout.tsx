@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "Mainstream Industries LTD | Solar Energy Nigeria",
   description:
     "Solar panels, inverters, batteries and energy solutions in Nigeria.",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
