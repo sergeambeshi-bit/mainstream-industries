@@ -34,9 +34,10 @@ export default function Footer() {
           <h4 className="font-semibold mb-4">Services</h4>
           <ul className="space-y-2 text-sm text-blue-200">
             <li>Solar Panel Installation</li>
+            <li>Solar CCTV Installation</li>
             <li>Hybrid Inverter Systems</li>
-            <li>Battery Storage</li>
-            <li>Off-Grid Solutions</li>
+            <li>Battery Storage Solutions</li>
+            <li>Off-Grid Solar Systems</li>
             <li>Energy Consulting</li>
           </ul>
         </div>
@@ -66,14 +67,24 @@ export default function Footer() {
             {/* Email */}
             <a
               href="mailto:mainstreamindustriesltd@gmail.com"
-              className="block hover:text-white transition"
+              className="block hover:text-white transition break-all"
             >
               📧 mainstreamindustriesltd@gmail.com
             </a>
 
+            {/* Address */}
+            <div className="leading-relaxed">
+              📍 Shop A10 & A11<br />
+              Awka Trade Centre,<br />
+              Aroma Junction, Awka,<br />
+              Anambra State, Nigeria
+            </div>
+
             {/* WhatsApp */}
             <a
               href="https://wa.me/2348068387145"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block text-green-300 hover:text-green-400 font-medium"
             >
               💬 Chat on WhatsApp
