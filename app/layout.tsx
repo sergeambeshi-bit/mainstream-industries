@@ -55,13 +55,12 @@ export default function RootLayout({
         {/* 🔥 MOBILE CTA */}
         <MobileCTA />
 
-        {/* 🔥 FORCE TAWK HIGH ABOVE WHATSAPP */}
+        {/* 🔥 FORCE TAWK ABOVE MOBILE CTA */}
         <style>{`
           @media (max-width: 767px) {
             #tawk-bubble-container,
             [id^="tawk-"],
             iframe[title="chat widget"] {
-              bottom: 320px !important;
               right: 12px !important;
             }
           }
@@ -91,23 +90,31 @@ export default function RootLayout({
             function applyTawkPosition() {
               if (window.innerWidth >= 768) return;
 
+              var cta = document.getElementById('mobile-cta-bar');
+              var ctaHeight = cta ? cta.offsetHeight : 90;
+
+              // 🔥 HUGE CLEARANCE ABOVE CTA
+              var targetBottom = ctaHeight + 260;
+
               var targets = [
                 document.getElementById('tawk-bubble-container'),
                 document.querySelector('[id^="tawk-"]'),
-                document.querySelector('iframe[title="chat widget"]')
+                document.querySelector('iframe[title="chat widget"]'),
+                document.querySelector('.tawk-button'),
+                document.querySelector('.tawk-button-circle')
               ];
 
               targets.forEach(function(el) {
                 if (!el) return;
 
-                el.style.setProperty('bottom', '320px', 'important');
+                el.style.setProperty('bottom', targetBottom + 'px', 'important');
                 el.style.setProperty('right', '12px', 'important');
                 el.style.setProperty('z-index', '999999', 'important');
               });
             }
 
-            // Keep forcing position because Tawk may reset it
-            setInterval(applyTawkPosition, 500);
+            // 🔥 Keep forcing because Tawk often resets styles
+            setInterval(applyTawkPosition, 300);
 
             window.addEventListener('resize', applyTawkPosition);
           `}
