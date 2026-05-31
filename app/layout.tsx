@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "Solar panels, inverters, batteries and energy solutions in Nigeria.",
   icons: {
-    icon: '/favicon.svg',
+    icon: "/favicon.svg",
   },
 };
 
@@ -38,22 +38,32 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} section-light text-black pb-20 md:pb-0`}
       >
+        {/* 🔥 NAVBAR */}
         <Navbar />
 
         {/* 🔥 DYNAMIC HERO */}
         <DynamicHero />
 
+        {/* 🔥 PAGE CONTENT */}
         <main className="min-h-screen">
           <PageTransition>{children}</PageTransition>
         </main>
 
+        {/* 🔥 FOOTER */}
         <Footer />
+
+        {/* 🔥 MOBILE CTA */}
         <MobileCTA />
 
-        {/* 🔥 TAWK: CSS override — targets the bubble container Tawk renders */}
+        {/* 🔥 FORCE TAWK HIGH ABOVE WHATSAPP */}
         <style>{`
           @media (max-width: 767px) {
-            #tawk-bubble-container { bottom: 90px !important; right: 10px !important; }
+            #tawk-bubble-container,
+            [id^="tawk-"],
+            iframe[title="chat widget"] {
+              bottom: 320px !important;
+              right: 12px !important;
+            }
           }
         `}</style>
 
@@ -68,38 +78,36 @@ export default function RootLayout({
 
             (function(){
               var s1=document.createElement("script"),
-              s0=document.getElementsByTagName("script")[0];
+                  s0=document.getElementsByTagName("script")[0];
+
               s1.async=true;
               s1.src='https://embed.tawk.to/69e0abab59abdf1c35d656bf/1jmapt5nv';
               s1.charset='UTF-8';
               s1.setAttribute('crossorigin','*');
+
               s0.parentNode.insertBefore(s1,s0);
             })();
 
             function applyTawkPosition() {
-              if (window.innerWidth >= 768) return; // desktop: leave Tawk alone
+              if (window.innerWidth >= 768) return;
+
               var targets = [
                 document.getElementById('tawk-bubble-container'),
                 document.querySelector('[id^="tawk-"]'),
                 document.querySelector('iframe[title="chat widget"]')
               ];
+
               targets.forEach(function(el) {
                 if (!el) return;
-                el.style.setProperty('bottom', '90px', 'important');
-                el.style.setProperty('right',  '10px',  'important');
+
+                el.style.setProperty('bottom', '320px', 'important');
+                el.style.setProperty('right', '12px', 'important');
+                el.style.setProperty('z-index', '999999', 'important');
               });
             }
 
-            // Fallback: keep applying until the container appears
-            var tawkTimer = setInterval(function() {
-              if (window.innerWidth >= 768) { clearInterval(tawkTimer); return; }
-              var container = document.getElementById('tawk-bubble-container')
-                || document.querySelector('[id^="tawk-"]');
-              if (container) {
-                applyTawkPosition();
-                clearInterval(tawkTimer);
-              }
-            }, 300);
+            // Keep forcing position because Tawk may reset it
+            setInterval(applyTawkPosition, 500);
 
             window.addEventListener('resize', applyTawkPosition);
           `}
