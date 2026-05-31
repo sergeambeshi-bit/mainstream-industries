@@ -72,13 +72,18 @@ export default function Footer() {
               📧 mainstreamindustriesltd@gmail.com
             </a>
 
-            {/* Address */}
-            <div className="leading-relaxed">
+            {/* Address (Clickable) */}
+            <a
+              href="https://maps.google.com/?q=Shop+A10+A11+Awka+Trade+Centre+Aroma+Junction+Awka+Anambra+State"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-white transition leading-relaxed"
+            >
               📍 Shop A10 & A11<br />
               Awka Trade Centre,<br />
               Aroma Junction, Awka,<br />
               Anambra State, Nigeria
-            </div>
+            </a>
 
             {/* WhatsApp */}
             <a
