@@ -3,7 +3,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
 
-export default function QuotePage(): JSX.Element {
+export default function QuotePage(): React.ReactNode {
   const [form, setForm] = useState({
     name: "",
     phone: "",

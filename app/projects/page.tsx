@@ -65,7 +65,7 @@ export default function ProjectsPage() {
               {/* Premium Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
                 <h3 className="text-white font-bold text-lg">{project.title}</h3>
-                <p className="text-gray-300 text-sm mt-1">{project.location || "Project Location"}</p>
+                <p className="text-gray-300 text-sm mt-1">Solar Project</p>
                 <div className="mt-4 inline-flex px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold w-fit hover:bg-blue-700 transition">
                   View Details →
                 </div>

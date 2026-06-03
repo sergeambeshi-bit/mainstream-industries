@@ -228,7 +228,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
                   <div className="p-4 text-white">
                     <p className="font-semibold text-sm">{project.title}</p>
-                    <p className="text-xs text-gray-300">{project.location || "Project"}</p>
+                    <p className="text-xs text-gray-300">Solar Project</p>
                   </div>
                 </div>
               </motion.div>
