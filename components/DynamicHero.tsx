@@ -7,6 +7,11 @@ import PageHero from "@/components/PageHero";
 export default function DynamicHero() {
   const pathname = usePathname();
 
+  // Quote page has its own hero
+  if (pathname.startsWith("/quote")) {
+    return null;
+  }
+
   if (pathname === "/") {
     return <MainHero />;
   }

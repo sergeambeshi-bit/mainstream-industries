@@ -44,9 +44,9 @@ export default function QuotePage(): React.ReactNode {
     <div className="bg-gradient-to-b from-slate-50 to-white text-slate-900">
 
       {/* HERO */}
-      <header className="relative bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900 to-blue-700 text-white overflow-hidden">
+      <header className="relative bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900 to-blue-700 text-white overflow-hidden min-h-[70vh] flex items-center">
         <div className="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=')] bg-cover bg-center blur-sm"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
+        <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">Get Your Free Solar Quote</h1>
             <p className="mt-4 text-blue-100 max-w-3xl">Tell us about your energy needs and our experts will recommend the ideal solar solution for your home, business or project.</p>
