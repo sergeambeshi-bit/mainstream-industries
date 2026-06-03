@@ -74,6 +74,14 @@ export default function Navbar() {
         {/* Right Side */}
         <div className="flex items-center gap-3">
 
+          {/* Get Quote CTA (desktop) */}
+          <Link
+            href="/quote"
+            className="hidden md:block bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-800 hover:to-blue-700 px-5 py-2 rounded-xl text-white font-semibold transition shadow-lg"
+          >
+            Get Quote
+          </Link>
+
           {/* WhatsApp CTA (desktop) */}
           <a
             href="https://wa.me/2347064493699"
@@ -135,12 +143,27 @@ export default function Navbar() {
               </motion.div>
             ))}
 
+            {/* Get Quote CTA */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <Link
+                href="/quote"
+                onClick={() => setOpen(false)}
+                className="block bg-gradient-to-r from-blue-700 to-blue-600 text-white text-center py-3 rounded-xl font-semibold active:scale-95 transition"
+              >
+                Get Quote
+              </Link>
+            </motion.div>
+
             {/* WhatsApp CTA */}
             <motion.a
               href="https://wa.me/2347064493699"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.3 }}
               className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold active:scale-95 transition"
             >
               WhatsApp

@@ -45,10 +45,41 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-blue-50 text-gray-900">
+    <div className="bg-gradient-to-b from-slate-50 to-white text-slate-900">
+
+      {/* 🏆 TRUST BAR */}
+      <section className="py-8 px-4 sm:px-6 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-around text-center gap-4">
+          {[
+            { label: "20+ Years", value: "Experience" },
+            { label: "500+", value: "Projects" },
+            { label: "24/7", value: "Support" },
+            { label: "100%", value: "Customer Focus" },
+          ].map((stat, i) => (
+            <div key={i}>
+              <p className="text-2xl font-bold text-blue-900">{stat.label}</p>
+              <p className="text-sm text-slate-600">{stat.value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 📍 HERO INTRO */}
+      <section className="py-12 md:py-16 px-4 sm:px-6 bg-gradient-to-r from-blue-50 to-slate-50 text-center">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h1>
+            <p className="text-slate-700 text-lg">Comprehensive renewable energy solutions designed to meet your unique energy needs and budget.</p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* 💼 SERVICES GRID */}
-      <section className="pt-12 md:pt-16 pb-20 px-4 sm:px-6">
+      <section className="py-12 md:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
 
           {services.map((service, i) => {
@@ -134,23 +165,38 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 🚀 STRONG CTA */}
-      <section className="bg-blue-900 text-white text-center py-20 px-6">
+      {/* 🚀 FINAL CTA */}
+      <section className="bg-gradient-to-r from-blue-900 to-blue-800 text-white text-center py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">
-            Need a Solar Solution?
-          </h2>
-
-          <p className="text-blue-200 mb-6">
-            Get expert advice, system design and pricing tailored to your needs.
-          </p>
-
-          <a
-            href="https://wa.me/2347064493699"
-            className="bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold inline-block hover:bg-gray-100 transition shadow-lg"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
-            Get a Free Solar Consultation
-          </a>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Get Started?
+            </h2>
+
+            <p className="text-blue-100 mb-8 text-lg">
+              Our energy experts are ready to design the perfect solution for you. Get your free consultation today.
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 rounded-xl font-semibold hover:bg-gray-100 transition shadow-lg"
+              >
+                Get Free Quote
+              </Link>
+              <a
+                href="https://wa.me/2348068387145"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/10 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/20 transition"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
