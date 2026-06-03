@@ -11,7 +11,7 @@ type Props = {
 export default function PageHero({ title, subtitle, image }: Props) {
   return (
     <section
-      className="relative text-white py-16 md:py-24 px-6 text-center overflow-hidden bg-no-repeat bg-cover bg-center"
+      className="relative text-white min-h-[40vh] md:min-h-[50vh] flex items-center justify-center px-6 text-center overflow-hidden bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: image
           ? `url('${image}')`
