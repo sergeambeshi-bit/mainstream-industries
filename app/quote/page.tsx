@@ -43,32 +43,78 @@ export default function QuotePage(): React.ReactNode {
   return (
     <div className="bg-gradient-to-b from-slate-50 to-white text-slate-900">
 
-      {/* HERO */}
-      <header className="relative bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900 to-blue-700 text-white overflow-hidden min-h-[70vh] flex items-center">
-        <div className="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=')] bg-cover bg-center blur-sm"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32 w-full">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">Get Your Free Solar Quote</h1>
-            <p className="mt-4 text-blue-100 max-w-3xl">Tell us about your energy needs and our experts will recommend the ideal solar solution for your home, business or project.</p>
+{/* HERO */}
+<header className="relative min-h-[75vh] flex items-center overflow-hidden text-white">
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a href="#quote-form" className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg hover:from-blue-700 hover:to-blue-600">
-                Request Free Quote
-              </a>
-              <a href="https://wa.me/2348068387145" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white/10 backdrop-blur text-white border border-white/20">
-                Chat on WhatsApp
-              </a>
-            </div>
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{
+      backgroundImage:
+        "url('/images/quote-hero.jpg')",
+    }}
+  />
 
-            <div className="mt-6 flex flex-wrap gap-3 text-sm text-blue-100">
-              <span className="inline-flex items-center gap-2 px-3 py-2 bg-white/6 rounded-2xl">✓ 20+ Years Experience</span>
-              <span className="inline-flex items-center gap-2 px-3 py-2 bg-white/6 rounded-2xl">✓ Nationwide Installation</span>
-              <span className="inline-flex items-center gap-2 px-3 py-2 bg-white/6 rounded-2xl">✓ Solar CCTV Specialists</span>
-              <span className="inline-flex items-center gap-2 px-3 py-2 bg-white/6 rounded-2xl">✓ Premium Equipment</span>
-            </div>
-          </motion.div>
-        </div>
-      </header>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/60" />
+
+  {/* Premium Blue Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 via-blue-900/20 to-transparent" />
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 w-full">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="max-w-3xl"
+    >
+      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-lg">
+        Get Your Free Solar Quote
+      </h1>
+
+      <p className="mt-6 text-lg md:text-xl text-white/90 drop-shadow-md">
+        Tell us about your energy needs and our experts will recommend the ideal solar solution for your home, business or project.
+      </p>
+
+      <div className="mt-10 flex flex-col sm:flex-row gap-4">
+        <a
+          href="#quote-form"
+          className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold shadow-xl hover:scale-105 transition"
+        >
+          Request Free Quote
+        </a>
+
+        <a
+          href="https://wa.me/2348068387145"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold hover:bg-white/20 transition"
+        >
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <div className="mt-10 flex flex-wrap gap-3">
+        <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm">
+          ✓ 20+ Years Experience
+        </span>
+
+        <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm">
+          ✓ Nationwide Installation
+        </span>
+
+        <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm">
+          ✓ Solar CCTV Specialists
+        </span>
+
+        <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm">
+          ✓ Premium Equipment
+        </span>
+      </div>
+    </motion.div>
+  </div>
+</header>
 
       {/* SOLUTIONS */}
       <section className="max-w-7xl mx-auto px-6 py-16">
