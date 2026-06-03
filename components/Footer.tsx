@@ -74,15 +74,15 @@ export default function Footer() {
 
             {/* Address (Clickable) */}
             <a
-              href="https://maps.google.com/?q=Shop+A10+A11+Awka+Trade+Centre+Aroma+Junction+Awka+Anambra+State"
+              href="https://maps.google.com/?q=Shop+B10+B11+Awka+Trade+Centre+Aroma+Junction+Awka+Anambra+State"
               target="_blank"
               rel="noopener noreferrer"
               className="block hover:text-white transition leading-relaxed"
             >
-              📍 Shop A10 & A11<br />
-              Awka Trade Centre,<br />
-              Aroma Junction, Awka,<br />
-              Anambra State, Nigeria
+                📍 Shop B10 & B11<br />
+                Awka Trade Centre,<br />
+                Aroma Junction, Awka,<br />
+                Anambra State, Nigeria
             </a>
 
             {/* WhatsApp */}

@@ -44,7 +44,12 @@ Message: ${form.message}`;
 
               <div>
                 <p className="font-semibold">Location</p>
-                <p>Anambra, Nigeria</p>
+                <p>
+                  Shop B10 & B11<br />
+                  Awka Trade Centre,<br />
+                  Aroma junction, Awka,<br />
+                  Anambra State, Nigeria
+                </p>
               </div>
 
               <div>
@@ -139,11 +144,11 @@ Message: ${form.message}`;
             </h2>
 
             <p className="text-gray-700 mb-4">
-              Mainstream Industries Ltd is located in Anambra, Nigeria.
-              Visit us for consultations, system design and expert advice.
+              Mainstream Industries Ltd
             </p>
 
-            <p className="text-gray-600 mb-2">📍 Anambra, Nigeria</p>
+            <p className="text-gray-600 mb-2">📍 Shop B10 & B11, Awka Trade Centre</p>
+            <p className="text-gray-600 mb-2">Aroma junction, Awka, Anambra State</p>
             <p className="text-gray-600 mb-2">
               📞 {" "}
               <a href="tel:+2348068387145" className="hover:text-blue-700 transition">
@@ -164,7 +169,7 @@ Message: ${form.message}`;
           {/* MAP */}
           <div className="w-full h-[350px] rounded-2xl overflow-hidden shadow-md">
             <iframe
-              src="https://www.google.com/maps?q=Anambra,Nigeria&output=embed"
+              src="https://www.google.com/maps?q=Shop+B10+B11+Awka+Trade+Centre+Aroma+Junction+Awka+Anambra+State&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
