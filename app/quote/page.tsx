@@ -55,11 +55,11 @@ export default function QuotePage(): React.ReactNode {
     }}
   />
 
-  {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-black/60" />
+{/* Strong Dark Overlay */}
+<div className="absolute inset-0 bg-black/80" />
 
-  {/* Premium Blue Gradient */}
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 via-blue-900/20 to-transparent" />
+{/* Strong Premium Blue Gradient */}
+<div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/50 to-black/30" />
 
   {/* Content */}
   <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 w-full">
@@ -69,11 +69,11 @@ export default function QuotePage(): React.ReactNode {
       transition={{ duration: 0.6 }}
       className="max-w-3xl"
     >
-      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-lg">
+      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-2xl">
         Get Your Free Solar Quote
       </h1>
 
-      <p className="mt-6 text-lg md:text-xl text-white/90 drop-shadow-md">
+      <p className="mt-6 text-lg md:text-xl text-white drop-shadow-xl font-medium">
         Tell us about your energy needs and our experts will recommend the ideal solar solution for your home, business or project.
       </p>
 

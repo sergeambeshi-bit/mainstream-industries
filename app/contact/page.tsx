@@ -49,8 +49,8 @@ Message: ${form.message}`;
                 {
                   icon: Phone,
                   title: "Call Us",
-                  details: ["+234 806 838 7145", "+234 803 724 3157"],
-                  link: "tel:+2348068387145",
+                  details: ["+234 803 724 3157"],
+                  link: "tel:+2348037243157",
                 },
                 {
                   icon: Mail,
@@ -72,7 +72,7 @@ Message: ${form.message}`;
                   icon: Clock,
                   title: "Support",
                   details: ["24/7 WhatsApp Support", "Fast Response Time"],
-                  link: "https://wa.me/2348068387145",
+                  link: "https://wa.me/2348037243157",
                 },
               ].map((contact, i) => {
                 const Icon = contact.icon;
