@@ -51,7 +51,7 @@ export default function Footer() {
 
             {/* Phone 2 */}
             <a
-              href="tel:+2348037243157"
+              href="tel:+2348068387145"
               className="block hover:text-white transition"
             >
               📞 +234 803 724 3157
@@ -80,7 +80,7 @@ export default function Footer() {
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/2348037243157"
+              href="https://wa.me/2348068387145"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-green-300 hover:text-green-400 font-medium"

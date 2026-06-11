@@ -28,11 +28,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 text-center"
               >
                 <div className="flex justify-center mb-3">
-                  <div className="p-4 rounded-full bg-gradient-to-br from-blue-50 to-blue-100">
-                    <stat.icon className="w-6 h-6 text-blue-700" />
+                  <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 shadow-lg">
+                    <stat.icon className="w-6 h-6 text-white" />
                   </div>
                 </div>
                 <p className="text-3xl md:text-4xl font-bold text-blue-900">{stat.value}</p>
@@ -225,10 +225,10 @@ export default function Home() {
                   fill
                   className="object-cover group-hover:scale-110 transition duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end">
                   <div className="p-4 text-white">
                     <p className="font-semibold text-sm">{project.title}</p>
-                    <p className="text-xs text-gray-300">Solar Project</p>
+                    <p className="text-xs text-blue-200">Premium Solar Installation</p>
                   </div>
                 </div>
               </motion.div>
@@ -249,8 +249,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-10 bg-[#06152F]">
+  <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-4">
+    {[
+      "✓ 20+ Years Experience",
+      "✓ Nationwide Installations",
+      "✓ Premium Equipment",
+      "✓ Certified Technicians",
+    ].map((item) => (
+      <div
+        key={item}
+        className="px-5 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium"
+      >
+        {item}
+      </div>
+    ))}
+  </div>
+</section>
+
       {/* ⭐ TESTIMONIALS */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-16 md:py-24 px-4 sm:px-6 bg-[#06152F] text-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -260,7 +278,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <p className="text-blue-700 font-semibold text-sm uppercase tracking-wide">Customer Feedback</p>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">What Our Customers Say</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mt-2 text-white">What Our Customers Say</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -290,17 +308,17 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200"
+                className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl"
               >
                 <div className="flex gap-1 mb-4">
                   {Array(t.rating).fill(0).map((_, j) => (
                     <span key={j} className="text-yellow-400">★</span>
                   ))}
                 </div>
-                <p className="text-slate-700 mb-6 italic">"{t.testimonial}"</p>
-                <div>
-                  <p className="font-semibold text-slate-900">{t.name}</p>
-                  <p className="text-sm text-slate-500">{t.location}</p>
+                <p className="text-white/80 mb-6 italic">"{t.testimonial}"</p>
+                <div>className="font-semibold text-white"
+                  <p >{t.name}</p>
+                  <p className="text-sm text-blue-200">{t.location}</p>
                 </div>
               </motion.div>
             ))}
@@ -349,8 +367,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Power Your Space with Solar?</h2>
-            <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">Get a free consultation from our energy experts and discover the perfect solar solution for your home or business.</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready To Eliminate Power Outages And Reduce Electricity Costs?</h2>
+            <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">Speak with our energy experts today and receive a customized solar recommendation tailored to your home, office or commercial facility.</p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
