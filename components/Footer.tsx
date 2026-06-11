@@ -43,53 +43,61 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* 📞 CONTACT */}
-        <div>
-          <h4 className="font-semibold mb-4">Contact</h4>
+{/* 📞 CONTACT */}
+<div>
+  <h4 className="font-semibold mb-4">Contact</h4>
 
-          <div className="space-y-3 text-sm text-blue-200">
+  <div className="space-y-3 text-sm text-blue-200">
 
-            {/* Phone 2 */}
-            <a
-              href="tel:+2348068387145"
-              className="block hover:text-white transition"
-            >
-              📞 +234 803 724 3157
-            </a>
+    {/* Phone 1 */}
+    <a
+      href="tel:+2348068387145"
+      className="block hover:text-white transition"
+    >
+      📞 +234 806 838 7145
+    </a>
 
-            {/* Email */}
-            <a
-              href="mailto:mainstreamindustriesltd@gmail.com"
-              className="block hover:text-white transition break-all"
-            >
-              📧 mainstreamindustriesltd@gmail.com
-            </a>
+    {/* Phone 2 */}
+    <a
+      href="tel:+2348037243157"
+      className="block hover:text-white transition"
+    >
+      📞 +234 803 724 3157
+    </a>
 
-            {/* Address (Clickable) */}
-            <a
-              href="https://maps.google.com/?q=Shop+B10+B11+Awka+Trade+Centre+Aroma+Junction+Awka+Anambra+State"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block hover:text-white transition leading-relaxed"
-            >
-                📍 Shop B10 & B11<br />
-                Awka Trade Centre,<br />
-                Aroma Junction, Awka,<br />
-                Anambra State, Nigeria
-            </a>
+    {/* Email */}
+    <a
+      href="mailto:mainstreamindustriesltd@gmail.com"
+      className="block hover:text-white transition break-all"
+    >
+      📧 mainstreamindustriesltd@gmail.com
+    </a>
 
-            {/* WhatsApp */}
-            <a
-              href="https://wa.me/2348068387145"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-green-300 hover:text-green-400 font-medium"
-            >
-              💬 Chat on WhatsApp
-            </a>
+    {/* Address */}
+    <a
+      href="https://maps.google.com/?q=Shop+B10+B11+Awka+Trade+Centre+Aroma+Junction+Awka+Anambra+State"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block hover:text-white transition leading-relaxed"
+    >
+      📍 Shop B10 & B11<br />
+      Awka Trade Centre,<br />
+      Aroma Junction, Awka,<br />
+      Anambra State, Nigeria
+    </a>
 
-          </div>
-        </div>
+    {/* WhatsApp */}
+    <a
+      href="https://wa.me/2348068387145"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block text-green-300 hover:text-green-400 font-medium"
+    >
+      💬 Chat on WhatsApp
+    </a>
+
+  </div>
+</div>
 
       </div>
 

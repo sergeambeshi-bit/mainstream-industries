@@ -49,7 +49,9 @@ Message: ${form.message}`;
                 {
                   icon: Phone,
                   title: "Call Us",
-                  details: ["+234 803 724 3157"],
+                  details: ["+234 803 724 3157",
+                            "+234 803 724 3157",
+                  ],
                   link: "tel:+2348068387145",
                 },
                 {
