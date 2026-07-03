@@ -316,8 +316,8 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-white/80 mb-6 italic">"{t.testimonial}"</p>
-                <div>className="font-semibold text-white"
-                  <p >{t.name}</p>
+                <div>
+                  <p className="font-semibold text-white">{t.name}</p>
                   <p className="text-sm text-blue-200">{t.location}</p>
                 </div>
               </motion.div>
