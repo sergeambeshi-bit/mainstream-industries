@@ -41,7 +41,7 @@ export default function ProductPage({
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200">
             <div className="relative h-[500px]">
               <Image
-                src={product.image}
+                src={product.image?.[0] || "/products/placeholder.jpg"}
                 alt={product.name}
                 fill
                 className="object-cover"

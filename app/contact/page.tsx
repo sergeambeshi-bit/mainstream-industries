@@ -116,7 +116,7 @@ Message: ${form.message}`;
             className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200"
           >
             <h2 className="text-2xl font-bold mb-2">Send a Message</h2>
-            <p className="text-slate-600 mb-6">We'll respond within 24 hours.</p>
+            <p className="text-slate-600 mb-6">We&apos;ll respond within 24 hours.</p>
 
             <div className="space-y-4">
               <input

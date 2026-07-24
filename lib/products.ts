@@ -1,129 +1,330 @@
-export const products = [
+export type Product = {
+  slug: string;
+  brand: "JSD Solar" | "Jinko Solar";
+  model: string;
+
+  name: string;
+
+  category:
+    | "solar-panels"
+    | "hybrid-inverters"
+    | "off-grid-inverters"
+    | "lithium-batteries"
+    | "energy-storage"
+    | "portable-power"
+    | "solar-street-lights"
+    | "accessories";
+
+  image: string[];
+
+  badge?: string;
+
+  warranty: string;
+
+  shortDescription: string;
+
+  description: string;
+
+  benefits: string[];
+
+  features: string[];
+
+  applications: string[];
+
+  specs: Record<string, string>;
+
+  datasheet?: string;
+};
+
+export const products: Product[] = [
+  // ==========================
+  // JSD SOLAR
+  // ==========================
+
   {
-    slug: "550w-solar-panel",
-    name: "550W Mono Solar Panel",
+    slug: "jsd-5kw-hybrid-inverter",
+
+    brand: "JSD Solar",
+
+    model: "JSD-H5K",
+
+    name: "5kW Hybrid Solar Inverter",
+
+    category: "hybrid-inverters",
+
+    image: [
+      "/products/jsd/h5k/front.webp",
+      "/products/jsd/h5k/side.webp",
+      "/products/jsd/h5k/display.webp",
+    ],
+
     badge: "Best Seller",
-    warranty: "25-Year Performance Warranty",
-    image: "/images/solar-panel.png",
+
+    warranty: "5-Year Warranty",
+
+    shortDescription:
+      "Smart hybrid inverter for residential and commercial solar systems.",
+
+    description:
+      "High-efficiency hybrid inverter supporting solar panels, lithium batteries and utility power for uninterrupted energy supply.",
+
+    benefits: [
+      "Lower Electricity Bills",
+      "Automatic Backup Power",
+      "Smart Energy Management",
+    ],
+
+    features: [
+      "Pure sine wave output",
+      "Dual MPPT technology",
+      "LCD touchscreen",
+      "Wi-Fi monitoring",
+      "Battery compatible",
+    ],
+
+    applications: [
+      "Homes",
+      "Offices",
+      "Schools",
+      "Churches",
+      "Small Businesses",
+    ],
+
+    specs: {
+      RatedPower: "5kW",
+      BatteryVoltage: "48V",
+      MPPT: "Dual",
+      Efficiency: "98%",
+      Output: "230V AC",
+    },
+
+    datasheet: "/datasheets/jsd/jsd-h5k.pdf",
+  },
+
+  {
+    slug: "jsd-10kw-hybrid-inverter",
+
+    brand: "JSD Solar",
+
+    model: "JSD-H10K",
+
+    name: "10kW Hybrid Solar Inverter",
+
+    category: "hybrid-inverters",
+
+    image: [
+      "/products/jsd/h10k/front.webp",
+      "/products/jsd/h10k/side.webp",
+    ],
+
+    badge: "Commercial",
+
+    warranty: "5-Year Warranty",
+
+    shortDescription:
+      "Powerful inverter for larger residential and commercial installations.",
+
+    description:
+      "Designed for demanding solar installations requiring high efficiency and reliable backup power.",
+
+    benefits: [
+      "Higher Energy Output",
+      "Fast Switching",
+      "Supports Large Loads",
+    ],
+
+    features: [
+      "Dual MPPT",
+      "Smart Monitoring",
+      "Parallel Support",
+      "Pure Sine Wave",
+    ],
+
+    applications: [
+      "Hotels",
+      "Factories",
+      "Schools",
+      "Commercial Buildings",
+    ],
+
+    specs: {
+      RatedPower: "10kW",
+      BatteryVoltage: "48V",
+      Efficiency: "98%",
+      Output: "230V AC",
+    },
+
+    datasheet: "/datasheets/jsd/jsd-h10k.pdf",
+  },
+
+  {
+    slug: "jsd-48v-200ah-lithium",
+
+    brand: "JSD Solar",
+
+    model: "JSD-LFP200",
+
+    name: "48V 200Ah Lithium Battery",
+
+    category: "lithium-batteries",
+
+    image: [
+      "/products/jsd/battery200/front.webp",
+      "/products/jsd/battery200/side.webp",
+    ],
+
+    badge: "Premium",
+
+    warranty: "10-Year Warranty",
+
+    shortDescription:
+      "Long-life LiFePO₄ battery for solar energy storage.",
+
+    description:
+      "High-performance lithium battery engineered for dependable backup power and long cycle life.",
+
+    benefits: [
+      "Long Cycle Life",
+      "Fast Charging",
+      "Maintenance Free",
+    ],
+
+    features: [
+      "LiFePO₄ Chemistry",
+      "Built-in BMS",
+      "Rack Mount",
+      "Expandable Capacity",
+    ],
+
+    applications: [
+      "Homes",
+      "Businesses",
+      "Solar Backup",
+    ],
+
+    specs: {
+      Voltage: "48V",
+      Capacity: "200Ah",
+      Chemistry: "LiFePO₄",
+      DesignLife: "10+ Years",
+    },
+
+    datasheet: "/datasheets/jsd/lfp200.pdf",
+  },
+
+  // ==========================
+  // JINKO SOLAR
+  // ==========================
+
+  {
+    slug: "jinko-tiger-neo-585w",
+
+    brand: "Jinko Solar",
+
+    model: "Tiger Neo 585W",
+
+    name: "Tiger Neo N-Type 585W Solar Panel",
+
     category: "solar-panels",
 
+    image: [
+      "/products/jinko/585/front.webp",
+      "/products/jinko/585/back.webp",
+    ],
+
+    badge: "Tier 1",
+
+    warranty: "25-Year Product Warranty",
+
+    shortDescription:
+      "High-efficiency N-Type monocrystalline solar module.",
+
     description:
-      "Premium high-efficiency monocrystalline solar panel engineered for residential, commercial and industrial solar installations.",
+      "Premium Jinko Tiger Neo panel delivering excellent efficiency and long-term reliability.",
 
     benefits: [
-      "Reduce Electricity Costs",
-      "Maximum Solar Output",
-      "Long-Term Reliability",
+      "Higher Energy Yield",
+      "Excellent Low-Light Performance",
+      "Reduced Degradation",
     ],
 
     features: [
-      "High conversion efficiency",
-      "Durable tempered glass",
-      "Weather resistant design",
-      "Long lifespan performance",
+      "N-Type Cell Technology",
+      "High Efficiency",
+      "PID Resistant",
+      "Excellent Temperature Coefficient",
+    ],
+
+    applications: [
+      "Residential",
+      "Commercial",
+      "Industrial",
+      "Solar Farms",
     ],
 
     specs: {
-      Power: "550W",
-      Type: "Monocrystalline",
-      Voltage: "24V",
-      Usage: "Residential / Commercial",
+      RatedPower: "585W",
+      CellType: "N-Type Mono",
+      Efficiency: "22.6%",
+      Frame: "Anodized Aluminium",
     },
+
+    datasheet: "/datasheets/jinko/tiger-neo-585.pdf",
   },
 
   {
-    slug: "5kva-hybrid-inverter",
-    name: "5kVA Hybrid Inverter",
+    slug: "jinko-tiger-neo-550w",
+
+    brand: "Jinko Solar",
+
+    model: "Tiger Neo 550W",
+
+    name: "Tiger Neo N-Type 550W Solar Panel",
+
+    category: "solar-panels",
+
+    image: [
+      "/products/jinko/550/front.webp",
+      "/products/jinko/550/back.webp",
+    ],
+
     badge: "Most Popular",
-    warranty: "5-Year Warranty",
-    image: "/images/inverter.png",
-    category: "inverters",
+
+    warranty: "25-Year Product Warranty",
+
+    shortDescription:
+      "Reliable high-performance solar panel for residential and commercial systems.",
 
     description:
-      "Advanced hybrid inverter designed for seamless solar, battery and grid integration with intelligent energy management.",
+      "Built using advanced N-Type technology to maximize energy generation while ensuring long-term durability.",
 
     benefits: [
-      "Reliable Backup Power",
-      "Lower Energy Bills",
-      "Smart Energy Control",
-    ],
-
-    features: [
-      "Supports solar + battery + grid",
-      "Smart energy management",
-      "Pure sine wave output",
-      "High efficiency performance",
-    ],
-
-    specs: {
-      Capacity: "5kVA",
-      Type: "Hybrid",
-      Voltage: "48V",
-      Usage: "Home / Office",
-    },
-  },
-
-  {
-    slug: "lithium-battery-5kwh",
-    name: "5kWh Lithium Battery Storage",
-    badge: "Premium Storage",
-    warranty: "10-Year Warranty",
-    image: "/images/battery.png",
-    category: "batteries",
-
-    description:
-      "High-performance lithium battery storage system built for reliable energy backup and solar energy storage.",
-
-    benefits: [
-      "Uninterrupted Power Supply",
-      "Fast Charging Performance",
+      "Lower Electricity Bills",
+      "Higher Efficiency",
       "Long Service Life",
     ],
 
     features: [
-      "Long cycle life",
-      "Fast charging",
-      "Compact design",
-      "Safe and stable chemistry",
+      "Half Cell Technology",
+      "N-Type Cells",
+      "Low Degradation",
+      "Excellent Weather Resistance",
+    ],
+
+    applications: [
+      "Homes",
+      "Businesses",
+      "Schools",
+      "Industrial Projects",
     ],
 
     specs: {
-      Capacity: "5kWh",
-      Type: "Lithium-ion",
-      Voltage: "48V",
-      Usage: "Solar Storage",
+      RatedPower: "550W",
+      CellType: "N-Type Mono",
+      Efficiency: "21.8%",
+      Frame: "Aluminium Alloy",
     },
-  },
 
-  {
-    slug: "mppt-charge-controller",
-    name: "MPPT Charge Controller",
-    badge: "Essential Component",
-    warranty: "2-Year Warranty",
-    image: "/images/controller.png",
-    category: "charge-controllers",
-
-    description:
-      "High-efficiency MPPT charge controller designed to maximize solar energy harvesting and protect battery systems.",
-
-    benefits: [
-      "Maximum Energy Harvest",
-      "Battery Protection",
-      "Higher System Efficiency",
-    ],
-
-    features: [
-      "Maximum power tracking",
-      "High efficiency conversion",
-      "Battery protection",
-      "Smart monitoring",
-    ],
-
-    specs: {
-      Type: "MPPT",
-      Voltage: "12V/24V/48V",
-      Efficiency: "98%",
-      Usage: "Solar Systems",
-    },
+    datasheet: "/datasheets/jinko/tiger-neo-550.pdf",
   },
 ];

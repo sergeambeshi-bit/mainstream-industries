@@ -57,7 +57,7 @@ export default function Home() {
               20+ Years of Renewable Energy Excellence
             </h2>
             <p className="text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
-              Mainstream Industries LTD is Nigeria's trusted renewable energy partner, delivering premium solar installations, hybrid systems, and energy solutions to homes, businesses, and communities nationwide. With proven expertise and certified installers, we power the future with confidence and reliability.
+              Mainstream Industries LTD is Nigeria&apos;s trusted renewable energy partner, delivering premium solar installations, hybrid systems, and energy solutions to homes, businesses, and communities nationwide. With proven expertise and certified installers, we power the future with confidence and reliability.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               {["Premium Equipment", "Expert Installation", "After-Sales Support"].map((t) => (
@@ -101,7 +101,7 @@ export default function Home() {
                 >
                   <div className="relative h-48">
                     <Image
-                      src={product.image}
+                      src={product.image?.[0] || "/products/placeholder.jpg"}
                       alt={product.name}
                       fill
                       className="object-cover group-hover:scale-105 transition"
@@ -132,7 +132,7 @@ export default function Home() {
               >
                 <div className="relative h-56 overflow-hidden bg-slate-200">
                   <Image
-                    src={product.image}
+                    src={product.image?.[0] || "/products/placeholder.jpg"}
                     alt={product.name}
                     fill
                     className="object-cover group-hover:scale-105 transition duration-500"
@@ -315,7 +315,7 @@ export default function Home() {
                     <span key={j} className="text-yellow-400">★</span>
                   ))}
                 </div>
-                <p className="text-white/80 mb-6 italic">"{t.testimonial}"</p>
+                <p className="text-white/80 mb-6 italic">&quot;{t.testimonial}&quot;</p>
                 <div>
                   <p className="font-semibold text-white">{t.name}</p>
                   <p className="text-sm text-blue-200">{t.location}</p>
@@ -342,7 +342,7 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-6 gap-6 items-center">
-            {["Growatt", "Deye", "Jinko", "LONGi", "Huawei", "Felicity"].map((brand, i) => (
+            {["JSDSOLAR", "Jinko Panels",].map((brand, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
