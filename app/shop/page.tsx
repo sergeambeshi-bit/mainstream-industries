@@ -191,7 +191,7 @@ export default function ShopPage() {
 
           <p className="text-blue-100 text-lg max-w-3xl mx-auto">
             Explore genuine JSD Solar energy solutions and official Jinko Solar
-            panels supplied by Mainstream Industries for residential,
+            panels supplied by Mainstream Industries LTD for residential,
             commercial, and industrial power needs.
           </p>
         </div>
