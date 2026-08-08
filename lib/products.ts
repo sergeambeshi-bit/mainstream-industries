@@ -53,9 +53,9 @@ export const products: Product[] = [
     category: "hybrid-inverters",
 
     image: [
-      "/products/jsd/h5k/front.webp",
-      "/products/jsd/h5k/side.webp",
-      "/products/jsd/h5k/display.webp",
+      "/products/jsd/JSD%205KW%20Hybrid%20Inverter.png",
+      "/products/jsd/JSD%205KW%20Hybrid%20Inverter.png",
+      "/products/jsd/JSD%205KW%20Hybrid%20Inverter.png",
     ],
 
     badge: "Best Seller",
@@ -113,8 +113,8 @@ export const products: Product[] = [
     category: "hybrid-inverters",
 
     image: [
-      "/products/jsd/h10k/front.webp",
-      "/products/jsd/h10k/side.webp",
+      "/products/jsd/JSD%2010KW%20Hybrid%20Inverter.png",
+      "/products/jsd/JSD%2010KW%20Hybrid%20Inverter.png",
     ],
 
     badge: "Commercial",
@@ -169,8 +169,8 @@ export const products: Product[] = [
     category: "lithium-batteries",
 
     image: [
-      "/products/jsd/battery200/front.webp",
-      "/products/jsd/battery200/side.webp",
+      "/products/jsd/JSD%2048V%20200Ah%20Battery.png",
+      "/products/jsd/JSD%2048V%20200Ah%20Battery.png",
     ],
 
     badge: "Premium",
@@ -228,8 +228,8 @@ export const products: Product[] = [
     category: "solar-panels",
 
     image: [
-      "/products/jinko/585/front.webp",
-      "/products/jinko/585/back.webp",
+      "/products/jinko/Jinko%20Tiger%20Neo%20585W.png",
+      "/products/jinko/Jinko%20Tiger%20Neo%20585W.png",
     ],
 
     badge: "Tier 1",
@@ -284,8 +284,8 @@ export const products: Product[] = [
     category: "solar-panels",
 
     image: [
-      "/products/jinko/550/front.webp",
-      "/products/jinko/550/back.webp",
+      "/products/jinko/Jinko%20Tiger%20Neo%20550W.png",
+      "/products/jinko/Jinko%20Tiger%20Neo%20550W.png",
     ],
 
     badge: "Most Popular",
